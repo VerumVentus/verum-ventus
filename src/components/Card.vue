@@ -15,7 +15,7 @@ const lorem = ref(
 <template>
   <a
     href="#"
-    class="text-left block max-w-md bg-gradient-to-r from-[#202629] via-[#202629] p-1 shadow dark:hover:bg-[#202629]"
+    class="text-left block max-w-xl bg-gradient-to-r from-[#202629] via-[#202629] p-1 shadow hover:bg-[#202629] ease-in-out duration-500"
   >
     <div class="p-8 h-full">
       <v-icon :name="icon || 'oi-accessibility'" scale="2" class="mb-1" />
