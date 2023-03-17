@@ -1,6 +1,7 @@
 <script setup>
 import { ref } from 'vue';
-import HelloWorld from './components/HelloWorld.vue';
+import Box from './components/Box.vue';
+import Card from './components/Card.vue';
 
 const options = ref({
   licenseKey: 'YOUR_KEY_HERE',
@@ -26,24 +27,37 @@ const options = ref({
 </script>
 
 <template>
-  <a href="#page1" target="_blank">
-    <img src="/logo.svg" class="logo" alt="Vite logo" />
-  </a>
+  <div class="min-w-full absolute z-50 flex justify-between items-center px-2">
+    <a href="#page1" target="_blank">
+      <img src="/logo.svg" class="logo" alt="Vite logo" />
+    </a>
+    <div class="flex gap-8 pr-8 uppercase">
+      <a href="#page2" target="_blank"> Overview </a>
+      <a href="#page3" target="_blank"> Data </a>
+      <a href="#page3" target="_blank"> Methods </a>
+      <a href="#page3" target="_blank"> Results </a>
+      <a href="#page3" target="_blank"> Team </a>
+    </div>
+  </div>
   <full-page :options="options" id="fullpage" ref="fullpage">
     <div class="section">
-      <div id="title"></div>
+      <div id="title" />
+      <div class="h-full w-full absolute -z-[1] bg-gradient-to-t from-black" />
       <p class="text-9xl font-extrabold">Verum Ventus</p>
       <p class="text-2xl">Seek the truth in a sea of tweets.</p>
     </div>
     <div class="section">
-      <div class="slide">
-        <h3>Slide 2.1</h3>
-      </div>
-      <div class="slide">
-        <h3>Slide 2.2</h3>
-      </div>
-      <div class="slide">
-        <h3>Slide 2.3</h3>
+      <div class="mx-40 flex flex-col gap-8">
+        <div class="flex justify-between items-center">
+          <p class="text-8xl text-left font-extrabold">Problem Formulation</p>
+          <Card header="Research Question" icon="oi-search" />
+        </div>
+        <div class="flex gap-8">
+          <Box header="Background" icon="oi-telescope" />
+          <Card header="Null Hypothesis" icon="oi-skip" />
+          <Card header="Alternative Hypothesis" icon="oi-star" />
+          <Card header="Action Plan" icon="oi-terminal" />
+        </div>
       </div>
     </div>
     <div class="section">
