@@ -2,6 +2,7 @@
 import { ref } from 'vue';
 import Box from './components/Box.vue';
 import Card from './components/Card.vue';
+import Contact from './components/Contact.vue';
 
 const options = ref({
   licenseKey: 'YOUR_KEY_HERE',
@@ -83,9 +84,30 @@ const options = ref({
         </div>
       </div>
     </div>
-    <div class="section">
+    <div class="section items-center">
       <div class="bg-img" id="wave" />
-      <h3>Section 3</h3>
+      <div class="flex flex-col gap-8">
+        <div class="">
+          <p class="text-8xl text-left font-extrabold">Meet our team</p>
+        </div>
+        <div class="max-w-screen-xl flex flex-row gap-8">
+          <Contact
+            name="Mutya Gulapa"
+            email="mcgulapa@up.edu.ph"
+            src="mutya.jpg"
+          />
+          <Contact
+            name="Migo Pagdanganan"
+            email="avpagdanganan@up.edu.ph"
+            src="migo.jpg"
+          />
+          <Contact
+            name="Jarred Luzada"
+            email="jeluzada@up.edu.ph"
+            src="jarred.jpg"
+          />
+        </div>
+      </div>
     </div>
   </full-page>
 </template>

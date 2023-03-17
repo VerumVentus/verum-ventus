@@ -110,7 +110,7 @@ button:focus-visible {
 
 #wave {
   filter: grayscale(10%);
-  opacity: 0.05;
+  opacity: 0.03;
   filter: invert(1);
   transform: rotate(180deg);
   background-size: unset;
