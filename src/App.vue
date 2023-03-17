@@ -62,7 +62,7 @@ const options = ref({
         <div class="flex gap-8">
           <Card
             header="Research Question"
-            msg="How did the Duterte administration affect the red-tagging of activists in the Philippines?"
+            msg="Did the Duterte Administration exacerbate the problem of red-tagging in the Philippines?"
             icon="oi-search"
           />
           <Card
