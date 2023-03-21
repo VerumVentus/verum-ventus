@@ -16,16 +16,11 @@ const lorem = ref(
   <a
     href="#"
     aria-disabled="true"
-    class="block max-w-xl bg-gradient-to-b from-[#8f3ced] to-[#c82881] p-1 border border-gray-200 shadow hover:bg-gray-100 dark:bg-[#21272a] dark:border-gray-700 dark:hover:bg-gray-700"
+    class="flex max-w-xl shadow hover:bg-[#121619]"
   >
-    <div class="text-left bg-[#121619] p-9 h-full">
-      <v-icon :name="icon || 'oi-accessibility'" scale="2" class="mb-1" />
-      <h5
-        class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white"
-      >
-        {{ header || 'Header' }}
-      </h5>
-      <p class="font-normal text-gray-700 dark:text-gray-400">
+    <div class="h-full w-4 bg-gradient-to-b from-[#8f3ced] to-[#c82881]" />
+    <div class="text-left bg-transparent px-4 py-2 h-full">
+      <p class="font-normal dark:text-gray-400">
         {{ msg || lorem }}
       </p>
     </div>

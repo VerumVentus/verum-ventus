@@ -4,6 +4,7 @@ import App from './App.vue';
 
 import 'vue-fullpage.js/dist/style.css';
 import VueFullPage from 'vue-fullpage.js';
+import VueClickAway from 'vue3-click-away';
 
 import { OhVueIcon, addIcons } from 'oh-vue-icons';
 import {
@@ -20,4 +21,5 @@ addIcons(OiAccessibility, OiSearch, OiSkip, OiStar, OiTerminal, OiTelescope);
 const app = createApp(App);
 app.component('v-icon', OhVueIcon);
 app.use(VueFullPage);
+app.use(VueClickAway);
 app.mount('#app');

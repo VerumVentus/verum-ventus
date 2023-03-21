@@ -3,6 +3,8 @@ import { ref } from 'vue';
 import Box from './components/Box.vue';
 import Card from './components/Card.vue';
 import Contact from './components/Contact.vue';
+import Blockquote from './components/Blockquote.vue';
+import Accordion from './components/Accordion.vue';
 
 const options = ref({
   licenseKey: 'YOUR_KEY_HERE',
@@ -17,7 +19,7 @@ const options = ref({
     '#121619',
     '#121619',
     '#121619',
-    '#21272a',
+    '#121619',
     '#1bcee6',
     '#ee1a59',
     '#2c3e4f',
@@ -41,13 +43,30 @@ const options = ref({
     </div>
   </div>
   <full-page :options="options" id="fullpage" ref="fullpage">
-    <div class="section">
+    <div class="section items-center">
       <div class="bg-img" id="title" />
       <div
-        class="h-full w-full absolute -z-[1] bg-gradient-to-t from-[#121619]"
+        class="h-1/4 w-full absolute -z-[1] bottom-0 bg-gradient-to-t from-[#121619]"
       />
-      <p class="text-9xl font-extrabold">Verum Ventus</p>
-      <p class="text-2xl">Seek the truth in a sea of tweets.</p>
+      <div class="w-full max-w-screen-xl flex flex-col gap-8">
+        <div class="flex gap-8 h-full">
+          <div class="w-fit align-top flex flex-col gap-8">
+            <p class="text-8xl text-left font-bold">
+              Follow the
+              <br />
+              Red Brick Road
+              <br />
+              and see where
+              <br />it goes.
+            </p>
+            <p class="text-3xl font-mono text-left">
+              A Data-Driven Investigation into the rampant
+              <br />
+              Red Tagging of Activists in the Philippines
+            </p>
+          </div>
+        </div>
+      </div>
     </div>
     <div class="section items-center">
       <div class="bg-img" id="grid" />
@@ -81,6 +100,17 @@ const options = ref({
             msg="Analyze and compare the yearly frequency of the mis/disinformation tweets that red-tag activists"
             icon="oi-terminal"
           />
+        </div>
+      </div>
+    </div>
+    <div class="section items-center">
+      <div class="bg-img" id="wave" />
+      <div class="w-full max-w-screen-xl flex flex-col gap-8">
+        <div class="">
+          <p class="text-8xl text-left font-extrabold">See the tweets</p>
+        </div>
+        <div class="max-w-screen-xl flex flex-row gap-8">
+          <Accordion />
         </div>
       </div>
     </div>
