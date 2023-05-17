@@ -20,7 +20,7 @@ const lorem = ref(
     <div class="text-left bg-[#121619] h-full overflow-hidden">
       <img
         class="w-full grayscale brightness-75 hover:grayscale-0 hover:scale-105 transform transition-all duration-500"
-        :src="src || 'mutya.webp'"
+        v-lazy="src || 'mutya.webp'"
       />
       <div class="p-8 tracking-tight text-gray-900 dark:text-white">
         <h1 class="text-2xl font-bold">

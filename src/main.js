@@ -1,10 +1,6 @@
 import { createApp } from 'vue';
 import './style.css';
-import Home from '@/pages/Home.vue';
-import Data from '@/pages/Data.vue';
-import Methods from '@/pages/Methods.vue';
-import Results from '@/pages/Results.vue';
-import Team from '@/pages/Team.vue';
+import router from './router';
 import App from './App.vue';
 
 import 'vue-fullpage.js/dist/style.css';
@@ -25,19 +21,6 @@ import {
 } from 'oh-vue-icons/icons';
 
 addIcons(OiAccessibility, OiSearch, OiSkip, OiStar, OiTerminal, OiTelescope);
-
-const routes = [
-  { path: '/', component: Home },
-  { path: '/data', component: Data },
-  { path: '/methods', component: Methods },
-  { path: '/results', component: Results },
-  { path: '/team', component: Team },
-];
-
-const router = createRouter({
-  history: createWebHistory(),
-  routes,
-});
 
 const app = createApp(App);
 app.use(router);

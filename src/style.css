@@ -140,13 +140,13 @@ div [lazy='loaded'] {
   background-image: url(/grid.png);
 }
 
-#wave {
+.bg-img.wave {
   filter: grayscale(10%);
   opacity: 0.03;
   filter: invert(1);
   transform: rotate(180deg);
   background-size: unset;
-  background-image: url(/wave.png);
+  background-blend-mode: lighten;
 }
 
 .logo {

@@ -92,7 +92,7 @@ const options = ref({
       </div>
     </div>
     <div class="section items-center">
-      <div class="bg-img" id="wave" />
+      <div class="bg-img" v-lazy:background-image="'/wave.png'" />
       <div class="w-full max-w-screen-xl flex flex-col gap-8">
         <div class="">
           <p class="text-8xl text-left font-extrabold">See the tweets</p>
@@ -103,7 +103,7 @@ const options = ref({
       </div>
     </div>
     <div class="section items-center">
-      <div class="bg-img" id="wave" />
+      <div class="bg-img" v-lazy:background-image="'/wave.png'" />
       <div class="flex flex-col gap-8">
         <div class="">
           <p class="text-8xl text-left font-extrabold">Meet our team</p>
