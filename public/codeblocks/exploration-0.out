@@ -1,0 +1,39 @@
+RangeIndex: 152 entries, 0 to 151
+Data columns (total 33 columns):
+ #   Column                Non-Null Count  Dtype  
+---  ------                --------------  -----  
+ 0   ID                    152 non-null    object 
+ 1   Timestamp             152 non-null    object 
+ 2   Tweet URL             152 non-null    object 
+ 3   Group                 152 non-null    int64  
+ 4   Collector             152 non-null    object 
+ 5   Category              152 non-null    object 
+ 6   Topic                 152 non-null    object 
+ 7   Keywords              152 non-null    object 
+ 8   Account handle        152 non-null    object 
+ 9   Account name          152 non-null    object 
+ 10  Account bio           94 non-null     object 
+ 11  Account type          151 non-null    object 
+ 12  Joined                152 non-null    object 
+ 13  Following             152 non-null    int64  
+ 14  Followers             152 non-null    int64  
+ 15  Location              70 non-null     object 
+ 16  Tweet                 152 non-null    object 
+ 17  Reasoning             152 non-null    object 
+ 18  Remarks               106 non-null    object 
+ 19  Tweet Translated      58 non-null     object 
+ 20  Tweet Type            151 non-null    object 
+ 21  Date posted           152 non-null    object 
+ 22  Screenshot            54 non-null     object 
+ 23  Content type          151 non-null    object 
+ 24  Likes                 152 non-null    int64  
+ 25  Replies               152 non-null    int64  
+ 26  Retweets              152 non-null    int64  
+ 27  Quote Tweets          152 non-null    int64  
+ 28  Views                 7 non-null      float64
+ 29  Rating                0 non-null      float64
+ 30  Satire vs Non-satire  152 non-null    object 
+ 31  Reviewer              0 non-null      float64
+ 32  Review                0 non-null      float64
+dtypes: float64(4), int64(7), object(22)
+memory usage: 39.3+ KB

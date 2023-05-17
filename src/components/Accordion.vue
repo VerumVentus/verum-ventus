@@ -1,12 +1,9 @@
 <script setup>
-import { ref } from 'vue';
 import Tweet from './Tweet.vue';
-
-const active = ref(0);
 </script>
 
 <template>
-  <div class="flex gap-4">
+  <div class="relative gap-1 self-baseline">
     <Tweet
       :key="index"
       :index="index"

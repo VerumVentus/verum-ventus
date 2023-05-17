@@ -1,0 +1,22 @@
+ID                      0
+Timestamp               0
+Tweet URL               0
+Account handle          0
+Account name            0
+Account bio             0
+Account type            0
+Joined                  0
+Following               0
+Followers               0
+Location                0
+Tweet                   0
+Reasoning               0
+Tweet Type              0
+Date posted             0
+Content type            0
+Likes                   0
+Replies                 0
+Retweets                0
+Quote Tweets            0
+Satire vs Non-satire    0
+dtype: int64

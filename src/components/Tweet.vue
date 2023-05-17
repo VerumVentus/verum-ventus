@@ -14,37 +14,52 @@ const onClickAway = () => {
 
 <template>
   <a
-    href="#"
-    v-on:click="active = !active"
+    @click="active = !active"
     v-click-away="onClickAway"
-    class="bg-[#121619] text-[#c1c3c3] w-fit flex flex-col hover:text-inherit overflow-hidden shadow-lg p-1 transition-all duration-[300ms] ease-in-out delay-400"
-    :class="active ? 'flex-initial' : 'flex-1'"
+    class="bg-[#121619] cursor-pointer flex-1 text-[#c1c3c3] float-left flex w-fit flex-col hover:text-inherit overflow-hidden shadow-lg p-1 transition-all duration-[300ms] ease-in-out delay-400"
   >
     <div
-      class="text-left flex flex-col gap-4 border-4 border-gray-700 p-8 h-[280px] overflow-hidden"
+      class="text-left flex p-8 flex-col gap-4 border-4 border-gray-700 h-[320px] overflow-hidden relative transition-all duration-[300ms] ease-in-out delay-400"
+      :class="active ? 'w-[500px]' : 'w-20'"
     >
-      <Transition name="fade">
-        <div v-if="!active">
-          <p class="text-[#71767b] text-sm font-mono">
-            {{ String(index).padStart(2, '0') || '00' }}
-          </p>
-        </div>
-      </Transition>
-      <Transition>
-        <div class="overflow-auto flex flex-col gap-4" v-if="active">
-          <div class="flex gap-4 items-center">
-            <img src="/mutya.jpg" class="h-10 rounded-full" alt="Vite logo" />
-            <div class="flex flex-col">
-              <p class="font-bold">John Doe</p>
-              <p class="text-[#71767b] text-sm">@jdoe</p>
+      <div v-if="!active" class="absolute top-10 left-0 right-0 mx-auto w-fit">
+        <p class="text-[#71767b] text-sm font-mono">
+          {{ String(index).padStart(2, '0') || '00' }}
+        </p>
+      </div>
+      <Transition name="expand">
+        <div
+          class="overflow-hidden h-fit flex flex-col justify-between gap-4"
+          v-if="active"
+        >
+          <div class="flex flex-col gap-2">
+            <div class="flex gap-4 items-center">
+              <img src="/mutya.jpg" class="h-10 rounded-full" alt="Vite logo" />
+              <div class="flex flex-col">
+                <p class="font-bold my-0">John Doe</p>
+                <p class="text-[#71767b] text-sm my-0">@jdoe</p>
+              </div>
+              <v-icon name="hi-solid-badge-check" class="text-[#1da1f2]" />
+              <v-icon
+                name="bi-twitter"
+                class="text-[#1da1f2] ml-auto"
+                scale="1.5"
+              />
             </div>
+            <p class="break-words w-[calc(500px-4rem)]">
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+              Obcaecati explicabo et perspiciatis ab iure pariatur debitis alias
+              expedita illo saepe hic doloremque nihil ad ea, incidunt ipsa nam
+              sapiente fugiat!
+            </p>
           </div>
-          <p class="break-words max-w-xs">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati
-            explicabo et perspiciatis ab iure pariatur debitis alias expedita
-            illo saepe hic doloremque nihil ad ea, incidunt ipsa nam sapiente
-            fugiat!
-          </p>
+          <div class="flex gap-4 items-center">
+            <div class="gap-2 flex">
+              <v-icon name="hi-heart" />
+              <div>1.2k</div>
+            </div>
+            <div>3:25 PM - Jan 16, 2019</div>
+          </div>
         </div>
       </Transition>
     </div>

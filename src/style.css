@@ -1,18 +1,26 @@
-@import url('https://cdn.rawgit.com/lonekorean/gist-syntax-themes/d49b91b3/stylesheets/idle-fingers.css');
+@import url('https://cdn.rawgit.com/lonekorean/gist-syntax-themes/b737b139/stylesheets/tomorrow-night.css');
 @import url('https://fonts.googleapis.com/css?family=Open+Sans');
+@import url('https://fonts.googleapis.com/css2?family=Alegreya:wght@800&family=Amethysta&family=Karma:wght@300;400;500;600;700&display=swap');
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+html {
+  scroll-behavior: smooth;
+}
+
 :root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-family: 'Karma', system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
+  overflow-x: hidden;
 
   color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+
+  @apply text-base bg-dark;
+
+  background-image: url(/texture.png);
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -40,23 +48,53 @@ body {
 }
 
 .wrapper {
-  @apply mx-auto xl:max-w-screen-xl w-screen px-8 text-left;
+  @apply mx-auto container w-screen text-left;
 }
 
 h1 {
-  @apply mb-4 text-4xl font-extrabold leading-none tracking-tight;
+  font-family: 'Alegreya';
+  @apply my-4 font-extrabold leading-none tracking-tight text-8xl;
 }
 
 h2 {
-  @apply text-4xl font-extrabold mb-2;
+  font-family: 'Amethysta';
+  @apply text-4xl font-extrabold my-6;
+}
+
+h3 {
+  font-family: 'Amethysta';
+  @apply text-2xl font-extrabold my-4;
 }
 
 p {
-  @apply mb-3;
+  font-family: 'Karma';
+  font-weight: 300;
+  @apply my-3 text-lg leading-relaxed;
+}
+
+code {
+  @apply text-sm font-mono bg-dark rounded-sm px-2 py-1;
+}
+
+.hljs {
+  @apply px-16 py-8 !important;
 }
 
 .highlighted {
-  @apply text-blue-600;
+  @apply font-extrabold relative inline-block px-1;
+}
+
+.highlighted::after {
+  content: ' ';
+  position: absolute;
+  bottom: 0.4rem;
+  left: 0;
+  right: 0;
+  margin: auto;
+  height: 0.6em;
+  width: 100%;
+  z-index: -1;
+  @apply bg-secondary/80;
 }
 
 button {
@@ -84,6 +122,7 @@ button:focus-visible {
 
 #app {
   min-width: 100vw;
+  height: 100vh;
   margin: 0 auto;
   text-align: center;
 }
@@ -112,7 +151,6 @@ button:focus-visible {
   top: 0;
   filter: grayscale(100%);
   z-index: -2;
-  background-size: cover;
 }
 
 @keyframes fadein {
@@ -149,6 +187,10 @@ div [lazy='loaded'] {
   background-blend-mode: lighten;
 }
 
+.badge {
+  @apply inline-block mx-1 px-2 py-1 font-bold leading-none bg-secondary text-base;
+}
+
 .logo {
   filter: invert(1);
 }
@@ -162,19 +204,38 @@ div [lazy='loaded'] {
   background: #555 !important;
 }
 
-body .gist .gist-file {
-  border-color: #555 #555 #444;
+#app {
+  overflow-x: hidden;
 }
-body .gist .gist-data {
-  border-color: #555;
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 10px;
 }
-body .gist .gist-meta {
-  color: #ffffff;
-  background: #373737;
+
+::-webkit-scrollbar-thumb {
+  border-radius: 8px;
+  background-color: #d6dee120;
 }
-body .gist .gist-meta a {
-  color: #ffffff;
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #d6dee120;
 }
-body .gist .gist-data .pl-s .pl-s1 {
-  color: #a5c261;
+
+::-webkit-scrollbar-corner {
+  background: transparent;
+}
+
+.expand-enter-active {
+  transition: all 1s ease;
+}
+
+.expand-enter-from,
+.expand-leave-to {
+  opacity: 0;
+  width: 0;
+}
+
+.section {
+  @apply w-screen h-screen relative flex items-center;
 }

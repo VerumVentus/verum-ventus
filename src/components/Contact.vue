@@ -14,7 +14,6 @@ const lorem = ref(
 
 <template>
   <a
-    href="#"
     class="block max-w-md hover:bg-gradient-to-b from-[#8f3ced] to-[#c82881] p-[4px] bg-[#21272a] shadow ease-in-out transition-all duration-500 hover:-translate-y-2"
   >
     <div class="text-left bg-[#121619] h-full overflow-hidden">

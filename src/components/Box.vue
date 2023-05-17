@@ -14,19 +14,19 @@ const lorem = ref(
 
 <template>
   <a
-    href="#"
     aria-disabled="true"
-    class="block max-w-xl bg-gradient-to-b from-[#8f3ced] to-[#c82881] p-1 border border-gray-200 shadow hover:bg-gray-100 dark:bg-[#21272a] dark:border-gray-700 dark:hover:bg-gray-700"
+    class="text-left block bg-gradient-to-b from-[#8f3ced] to-[#c82881] p-1 border shadow border-gray-700"
   >
-    <div class="text-left bg-[#121619] p-9 h-full">
-      <v-icon :name="icon || 'oi-accessibility'" scale="2" class="mb-1" />
+    <div class="bg-inherit p-9 h-full">
+      <v-icon :name="icon" v-if="icon" scale="2" class="mb-1" />
       <h5
         class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white"
+        v-if="header"
       >
-        {{ header || 'Header' }}
+        {{ header }}
       </h5>
       <p class="font-normal text-gray-700 dark:text-gray-400">
-        {{ msg || lorem }}
+        <slot></slot>
       </p>
     </div>
   </a>
