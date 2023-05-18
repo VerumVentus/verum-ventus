@@ -3,8 +3,6 @@ import './style.css';
 import router from './router';
 import App from './App.vue';
 
-import 'vue-fullpage.js/dist/style.css';
-import VueFullPage from 'vue-fullpage.js';
 import VueClickAway from 'vue3-click-away';
 import VueLazyload from 'vue-lazyload';
 import VueEmbedGist from 'vue-embed-gist';
