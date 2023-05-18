@@ -22,7 +22,6 @@ const app = createApp(App);
 app.use(router);
 app.component('v-icon', OhVueIcon);
 app.component('v-embed-gist', VueEmbedGist);
-app.use(VueFullPage);
 app.use(VueClickAway);
 app.use(VueLazyload);
 app.use(VueHighlightJS);
