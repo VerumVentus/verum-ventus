@@ -1,5 +1,5 @@
 <template>
-  <div class="wrapper">
+  <div class="article-wrapper">
     <navbar class="relative block invisible" />
     <h1>Data Collection</h1>
     <h2>We mined the internet for fake news data.</h2>
@@ -54,8 +54,9 @@
       These criteria play a crucial role in ensuring the high quality of the
       data used in our machine learning process:
     </p>
-    <div class="grid lg:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-8">
+    <div class="grid grid-rows-3 gap-8">
       <Card
+        class="max-w-none"
         v-for="criterion in criteria"
         :header="criterion.header"
         :msg="criterion.content"

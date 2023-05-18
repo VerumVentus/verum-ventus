@@ -1,6 +1,6 @@
 @import url('https://cdn.rawgit.com/lonekorean/gist-syntax-themes/b737b139/stylesheets/tomorrow-night.css');
 @import url('https://fonts.googleapis.com/css?family=Open+Sans');
-@import url('https://fonts.googleapis.com/css2?family=Alegreya:wght@800&family=Amethysta&family=Karma:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600;1,700;1,800&family=Amethysta&family=Karma:wght@300;400;500;600;700&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -14,7 +14,6 @@ html {
   font-family: 'Karma', system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
-  overflow-x: hidden;
 
   color-scheme: light dark;
 
@@ -39,6 +38,12 @@ a:hover {
   transition: 0.2s ease;
 }
 
+html,
+body {
+  width: 100%;
+  overflow-x: hidden;
+}
+
 body {
   margin: 0;
   display: flex;
@@ -48,7 +53,11 @@ body {
 }
 
 .wrapper {
-  @apply mx-auto container w-screen text-left;
+  @apply mx-auto container w-screen text-left px-4;
+}
+
+.article-wrapper {
+  @apply mx-auto container w-screen xl:max-w-screen-lg text-left px-4;
 }
 
 h1 {
@@ -69,7 +78,7 @@ h3 {
 p {
   font-family: 'Karma';
   font-weight: 300;
-  @apply my-3 text-lg leading-relaxed;
+  @apply my-3 text-xl leading-loose;
 }
 
 code {
@@ -87,7 +96,7 @@ code {
 .highlighted::after {
   content: ' ';
   position: absolute;
-  bottom: 0.4rem;
+  bottom: 0.6rem;
   left: 0;
   right: 0;
   margin: auto;
@@ -129,19 +138,6 @@ button:focus-visible {
 
 .fp-watermark {
   display: none;
-}
-
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
 }
 
 .bg-img {
@@ -204,10 +200,6 @@ div [lazy='loaded'] {
   background: #555 !important;
 }
 
-#app {
-  overflow-x: hidden;
-}
-
 ::-webkit-scrollbar {
   width: 8px;
   height: 10px;
@@ -237,5 +229,5 @@ div [lazy='loaded'] {
 }
 
 .section {
-  @apply w-screen h-screen relative flex items-center;
+  @apply w-screen min-h-screen relative flex items-center;
 }

@@ -457,11 +457,6 @@
   "resolved" "https://registry.npmjs.org/fraction.js/-/fraction.js-4.2.0.tgz"
   "version" "4.2.0"
 
-"fullpage.js@^4.0.18":
-  "integrity" "sha512-iDbxKEU4mpeoYJzsW+P0B+EK7586mNpBjES01U/QWh5FbDY8r1EqZPrGPciZVZHdJoz6zUze5q/PGOc4SQoqow=="
-  "resolved" "https://registry.npmjs.org/fullpage.js/-/fullpage.js-4.0.19.tgz"
-  "version" "4.0.19"
-
 "function-bind@^1.1.1":
   "integrity" "sha512-yIovAzMX49sF8Yl58fSCWJ5svSLuaibPxXQJFLmBObTuCr0Mf1KiPopGM9NiFjiYBCbfaa2Fh6breQ6ANVTI0A=="
   "resolved" "https://registry.npmjs.org/function-bind/-/function-bind-1.1.1.tgz"
@@ -1090,13 +1085,6 @@
   dependencies:
     "jsonp" "^0.2.1"
 
-"vue-fullpage.js@^0.2.13":
-  "integrity" "sha512-dbxpooJOdS0o3wzeByL0DAgDpZezngZUoh9uqY+h2AM24rJagQQ9XnEHDOg5jMcgBiK2Sx/jKa6MyMisG/5Zqw=="
-  "resolved" "https://registry.npmjs.org/vue-fullpage.js/-/vue-fullpage.js-0.2.13.tgz"
-  "version" "0.2.13"
-  dependencies:
-    "fullpage.js" "^4.0.18"
-
 "vue-lazyload@^3.0.0":
   "integrity" "sha512-h2keL/Rj550dLgesgOtXJS9qOiSMmuJNeVlfNAYV1/IYwOQYaWk5mFJlwRxmZDK9YC5gECcFLYYj7z1lKSf9ug=="
   "resolved" "https://registry.npmjs.org/vue-lazyload/-/vue-lazyload-3.0.0.tgz"
@@ -1109,7 +1097,7 @@
   dependencies:
     "@vue/devtools-api" "^6.5.0"
 
-"vue@^2.0.0 || >=3.0.0", "vue@^3.0.0", "vue@^3.0.0-0 || ^2.6.0", "vue@^3.2.0", "vue@^3.2.25", "vue@^3.2.26", "vue@^3.2.47", "vue@3.2.47":
+"vue@^2.0.0 || >=3.0.0", "vue@^3.0.0", "vue@^3.0.0-0 || ^2.6.0", "vue@^3.2.0", "vue@^3.2.25", "vue@^3.2.47", "vue@3.2.47":
   "integrity" "sha512-60188y/9Dc9WVrAZeUVSDxRQOZ+z+y5nO2ts9jWXSTkMvayiWxCWOWtBQoYjLeccfXkiiPZWAHcV+WTPhkqJHQ=="
   "resolved" "https://registry.npmjs.org/vue/-/vue-3.2.47.tgz"
   "version" "3.2.47"

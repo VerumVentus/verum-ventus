@@ -1,5 +1,5 @@
 <template>
-  <div class="wrapper">
+  <div class="article-wrapper">
     <navbar class="relative block invisible" />
     <h1>Data Exploration</h1>
     <h2>Let's now explore the data.</h2>

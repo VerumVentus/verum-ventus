@@ -29,29 +29,31 @@ const onClickAway = () => {
       </div>
       <Transition name="expand">
         <div
-          class="overflow-hidden h-fit flex flex-col justify-between gap-4"
+          class="overflow-hidden h-full flex flex-col justify-between gap-4"
           v-if="active"
         >
-          <div class="flex flex-col gap-2">
+          <div class="flex flex-col gap-4">
             <div class="flex gap-4 items-center">
               <img src="/mutya.jpg" class="h-10 rounded-full" alt="Vite logo" />
               <div class="flex flex-col">
-                <p class="font-bold my-0">John Doe</p>
-                <p class="text-[#71767b] text-sm my-0">@jdoe</p>
+                <h6 class="font-bold my-0">
+                  John Doe
+                  <v-icon name="hi-solid-badge-check" class="text-[#1da1f2]" />
+                </h6>
+                <h6 class="text-[#71767b] text-sm my-0">@jdoe</h6>
               </div>
-              <v-icon name="hi-solid-badge-check" class="text-[#1da1f2]" />
               <v-icon
                 name="bi-twitter"
                 class="text-[#1da1f2] ml-auto"
                 scale="1.5"
               />
             </div>
-            <p class="break-words w-[calc(500px-4rem)]">
+            <h6 class="break-words w-[calc(500px-4rem)]">
               Lorem ipsum dolor sit amet, consectetur adipisicing elit.
               Obcaecati explicabo et perspiciatis ab iure pariatur debitis alias
               expedita illo saepe hic doloremque nihil ad ea, incidunt ipsa nam
               sapiente fugiat!
-            </p>
+            </h6>
           </div>
           <div class="flex gap-4 items-center">
             <div class="gap-2 flex">

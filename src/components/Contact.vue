@@ -14,11 +14,11 @@ const lorem = ref(
 
 <template>
   <a
-    class="block max-w-md hover:bg-gradient-to-b from-[#8f3ced] to-[#c82881] p-[4px] bg-[#21272a] shadow ease-in-out transition-all duration-500 hover:-translate-y-2"
+    class="group block max-w-md hover:bg-gradient-to-b from-[#8f3ced] to-[#c82881] p-[4px] bg-[#21272a] shadow ease-in-out transition-all duration-500 hover:-translate-y-2"
   >
     <div class="text-left bg-[#121619] h-full overflow-hidden">
       <img
-        class="w-full grayscale brightness-75 hover:grayscale-0 hover:scale-105 transform transition-all duration-500"
+        class="w-full grayscale brightness-75 group-hover:grayscale-0 group-hover:scale-105 transform transition-all duration-500"
         v-lazy="src || 'mutya.webp'"
       />
       <div class="p-8 tracking-tight text-gray-900 dark:text-white">

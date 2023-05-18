@@ -20,7 +20,7 @@ const lorem = ref(
     <div class="bg-inherit p-9 h-full">
       <v-icon :name="icon" v-if="icon" scale="2" class="mb-1" />
       <h5
-        class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white"
+        class="mb-2 text-2xl font-bold tracking-tight text-white"
         v-if="header"
       >
         {{ header }}

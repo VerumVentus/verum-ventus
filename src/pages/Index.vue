@@ -1,17 +1,17 @@
 <script setup>
-import { ref } from 'vue';
+import { ref, watch } from 'vue';
 import Box from '../components/Box.vue';
 import Card from '../components/Card.vue';
 import Contact from '../components/Contact.vue';
 import Accordion from '../components/Accordion.vue';
-import Footer from '@/components/Footer.vue';
 import { onMounted } from 'vue';
-import { onBeforeUnmount } from 'vue';
 import { onUnmounted } from 'vue';
 
 // add an event listener for #app that scrolls the page to the next section when the user scrolls down and previous section when the user scrolls up
 
 const anchors = ref(null);
+
+const active = ref(0);
 
 const scrollTo = (anchor) => {
   anchor.scrollIntoView({
@@ -19,55 +19,88 @@ const scrollTo = (anchor) => {
   });
 };
 
-const scroll = (e) => {
+const scrollElemIntoView = async (elem, options) => {
+  return new Promise((resolve, reject) => {
+    if (!elem) {
+      reject('Cannot scroll as the target element does not exist');
+      return;
+    }
+    elem.scrollIntoView({
+      behavior: 'smooth',
+      onScrollEnd: resolve(),
+      ...options,
+    });
+  });
+};
+
+const scroll = async (e) => {
+  if (e.ctrlKey) return;
+
   e.preventDefault();
   if (e.deltaY > 0) {
-    const next = Array.from(anchors.value).find(
-      (section) => section.offsetTop > app.scrollTop
-    );
-    next?.scrollIntoView({
+    const index = Math.min(active.value + 1, anchors.value.length - 1);
+    const next = anchors.value[index];
+    await scrollElemIntoView(next, {
       behavior: 'smooth',
+      block: 'center',
     });
+    active.value = index;
   } else {
-    const prev = Array.from(anchors.value)
-      .reverse()
-      .find((section) => section.offsetTop < app.scrollTop);
-    prev?.scrollIntoView({
+    const index = Math.max(active.value - 1, 0);
+    const prev = anchors.value[index];
+    await scrollElemIntoView(prev, {
       behavior: 'smooth',
+      block: 'center',
     });
+    active.value = index;
   }
 };
 
+const arrow = async (e) => {
+  e.preventDefault();
+
+  if (e.key === 'ArrowDown') {
+    const index = Math.min(active.value + 1, anchors.value.length - 1);
+    const next = anchors.value[index];
+    await scrollElemIntoView(next, {
+      behavior: 'smooth',
+      block: 'center',
+    });
+    active.value = index;
+  } else if (e.key === 'ArrowUp') {
+    const index = Math.max(active.value - 1, 0);
+    const prev = anchors.value[index];
+    await scrollElemIntoView(prev, {
+      behavior: 'smooth',
+      block: 'center',
+    });
+    active.value = index;
+  }
+};
+
+const resizeObserver = new ResizeObserver((entries) => {
+  const body = window.document.body;
+  if (entries[0].contentRect.width > 1280) {
+    body.addEventListener('wheel', scroll, { passive: false });
+    body.addEventListener('keydown', arrow, { passive: false });
+  } else {
+    body.removeEventListener('wheel', scroll), { passive: false };
+    body.removeEventListener('keydown', arrow, { passive: false });
+  }
+});
+
 onUnmounted(() => {
-  const app = document.querySelector('#app');
-  app.removeEventListener('wheel', scroll);
+  const body = window.document.body;
+  body.removeEventListener('wheel', scroll, { passive: false });
+  body.removeEventListener('keydown', arrow, { passive: false });
+  resizeObserver.unobserve(body);
 });
 
 onMounted(() => {
-  const app = document.querySelector('#app');
+  const body = window.document.body;
   const anchor = document.querySelectorAll('.anchor');
   anchors.value = anchor;
-
-  app.addEventListener('wheel', scroll);
-
-  window.addEventListener('keydown', (e) => {
-    if (e.key === 'ArrowDown') {
-      const next = Array.from(anchor).find(
-        (section) => section.offsetTop > app.scrollTop
-      );
-      next?.scrollIntoView({
-        behavior: 'smooth',
-      });
-    } else if (e.key === 'ArrowUp') {
-      console.log('up');
-      const prev = Array.from(anchor)
-        .reverse()
-        .find((section) => section.offsetTop < app.scrollTop);
-      prev?.scrollIntoView({
-        behavior: 'smooth',
-      });
-    }
-  });
+  resizeObserver.observe(body);
 });
 </script>
 
@@ -83,10 +116,11 @@ onMounted(() => {
     class="absolute left-16 top-0 bottom-0 m-auto h-fit flex flex-col gap-4 z-50"
   >
     <div
-      v-for="anchor in anchors"
+      v-for="(anchor, index) in anchors"
       :key="anchor"
       class="h-2 w-2 bg-base rounded-full hover:scale-150 hover:bg-[#8f3ced] hover:shadow-lg cursor-pointer"
-      @click="scrollTo(anchor)"
+      :class="active === index ? 'bg-[#8f3ced] shadow-lg scale-150' : ''"
+      @click="scrollTo(anchor), (active = index)"
     />
   </div>
   <div class="flex flex-col items-center relative">
@@ -96,8 +130,8 @@ onMounted(() => {
         class="h-1/2 w-full absolute -z-[1] bottom-0 bg-gradient-to-t from-[#171a1c]"
       />
       <div class="w-full wrapper">
-        <div class="flex gap-8 h-full">
-          <div class="w-fit align-top flex flex-col gap-8">
+        <div class="flex gap-8 h-full w-full">
+          <div class="align-top flex flex-col gap-8">
             <h1 class="text-left">
               Following the
               <br />
@@ -115,11 +149,27 @@ onMounted(() => {
         </div>
       </div>
     </div>
+    <div class="anchor">
+      <div class="wrapper flex flex-col items-center p-10">
+        <div class="text-center text-5xl">❝</div>
+        <blockquote class="max-w-4xl border-y-2 px-8 py-4 text-center">
+          <h1 class="italic text-4xl">
+            Sabihin mo, ‘Pulis, barilin mo na ‘yang kasali diyan para makita
+            talaga kung anong klaseng human right’
+          </h1>
+          <h2 class="text-2xl">
+            — Duterte addressing the nation on protests against war on drugs —
+          </h2>
+        </blockquote>
+      </div>
+    </div>
     <div class="section anchor">
       <div class="bg-img bg-cover bg-[#171a1c]" id="grid" />
       <div class="wrapper flex flex-col gap-8">
-        <div class="flex justify-between items-center gap-16">
-          <p class="text-8xl text-left font-extrabold w-min">
+        <div
+          class="flex xl:flex-row flex-col justify-between items-center gap-16"
+        >
+          <p class="text-8xl text-left font-extrabold xl:w-min">
             Problem Formulation
           </p>
           <Box
@@ -134,7 +184,7 @@ onMounted(() => {
             specifically to tracking down alleged members of CPP-NPA.
           </Box>
         </div>
-        <div class="flex gap-8">
+        <div class="grid xl:grid-cols-4 md:grid-cols-2 grid-cols-1 gap-8">
           <Card
             header="Research Question"
             msg="Did the Duterte Administration exacerbate the problem of red-tagging in the Philippines?"
