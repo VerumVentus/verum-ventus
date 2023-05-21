@@ -5,7 +5,6 @@ import App from './App.vue';
 
 import VueClickAway from 'vue3-click-away';
 import VueLazyload from 'vue-lazyload';
-import VueEmbedGist from 'vue-embed-gist';
 import VueHighlightJS from 'vue3-highlightjs';
 import 'highlight.js/styles/dracula.css';
 
@@ -21,7 +20,6 @@ addIcons(...Bi);
 const app = createApp(App);
 app.use(router);
 app.component('v-icon', OhVueIcon);
-app.component('v-embed-gist', VueEmbedGist);
 app.use(VueClickAway);
 app.use(VueLazyload);
 app.use(VueHighlightJS);

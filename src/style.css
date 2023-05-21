@@ -1,6 +1,6 @@
-@import url('https://cdn.rawgit.com/lonekorean/gist-syntax-themes/b737b139/stylesheets/tomorrow-night.css');
 @import url('https://fonts.googleapis.com/css?family=Open+Sans');
 @import url('https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600;1,700;1,800&family=Amethysta&family=Karma:wght@300;400;500;600;700&display=swap');
+@import 'embed.css';
 
 @tailwind base;
 @tailwind components;
@@ -81,8 +81,12 @@ p {
   @apply my-3 text-xl leading-loose;
 }
 
+b {
+  @apply font-bold;
+}
+
 code {
-  @apply text-sm font-mono bg-dark rounded-sm px-2 py-1;
+  @apply text-sm font-mono bg-[#282a36] text-primary rounded-md px-2 py-1;
 }
 
 .hljs {
@@ -90,18 +94,18 @@ code {
 }
 
 .highlighted {
-  @apply font-extrabold relative inline-block px-1;
+  @apply font-extrabold relative inline-block px-1 cursor-pointer;
 }
 
 .highlighted::after {
   content: ' ';
   position: absolute;
   bottom: 0.6rem;
-  left: 0;
+  left: 0.5rem;
   right: 0;
   margin: auto;
   height: 0.6em;
-  width: 100%;
+  width: calc(100% - 0.5rem);
   z-index: -1;
   @apply bg-secondary/80;
 }
@@ -230,4 +234,8 @@ div [lazy='loaded'] {
 
 .section {
   @apply w-screen min-h-screen relative flex items-center;
+}
+
+.chart {
+  @apply max-w-md mx-auto rounded-md;
 }

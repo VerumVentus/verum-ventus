@@ -900,6 +900,18 @@
     "picocolors" "^1.0.0"
     "source-map-js" "^1.0.2"
 
+"postscribe@^2.0.8":
+  "integrity" "sha512-Sxt6pek38NKX85Vb/PbcritqVxsgPZQFLcuf4o0f7lXRb76jM0XP79SGwCBPRTuv+U2zqByQan8EzRjqquD73A=="
+  "resolved" "https://registry.npmjs.org/postscribe/-/postscribe-2.0.8.tgz"
+  "version" "2.0.8"
+  dependencies:
+    "prescribe" ">=1.1.2"
+
+"prescribe@>=1.1.2":
+  "integrity" "sha512-HEg0ElY5tmmCshST4tzl47+SirJO2cVo6j/+O4d6xIz+80ixNcN0GgPQsn76AgeTTIAQOrwq1rfoptubQuZ1Uw=="
+  "resolved" "https://registry.npmjs.org/prescribe/-/prescribe-1.1.3.tgz"
+  "version" "1.1.3"
+
 "queue-microtask@^1.2.2":
   "integrity" "sha512-NuaNSa6flKT5JaSYQzJok04JzTL1CA6aGhv5rfLW3PgqA+M2ChpZQnAC8h8i4ZFkBS8X5RqkDBHA7r4hej3K9A=="
   "resolved" "https://registry.npmjs.org/queue-microtask/-/queue-microtask-1.2.3.tgz"

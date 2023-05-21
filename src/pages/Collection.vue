@@ -63,6 +63,21 @@
         :icon="criterion.icon"
       />
     </div>
+    <p>
+      The scope of our analysis is tweets with mis/disinformation containing the
+      above keywords from <b>2016 to 2022</b> (the period of Duterte’s
+      presidency).
+    </p>
+    <p>The following factors were also taken into consideration:</p>
+    <div class="grid grid-cols-2 gap-8">
+      <Card
+        class="max-w-none text-center"
+        v-for="type in types"
+        :header="type.name"
+        :msg="type.description"
+        :icon="type.icon"
+      />
+    </div>
   </div>
 </template>
 
@@ -70,8 +85,6 @@
 import Navbar from '@/components/Navbar.vue';
 import Box from '@/components/Box.vue';
 import Card from '@/components/Card.vue';
-import GistEmbed from '@/components/GistEmbed.vue';
-import reader from '@/utils/reader.js';
 import Highlight from '@/components/Highlight.vue';
 
 const keywords = [
@@ -106,6 +119,33 @@ const criteria = [
     content:
       'The timeliness of the data is vital, particularly when studying dynamic phenomena such as misinformation. We prioritize recent tweets to ensure that our dataset reflects the most up-to-date trends and patterns, allowing us to draw accurate conclusions based on current information.',
     icon: 'hi-newspaper',
+  },
+];
+
+const types = [
+  {
+    icon: 'hi-chat-alt-2',
+    name: 'Tweet type',
+    description:
+      'Tweets can be in the form of text, replies, links, images, videos, or a combination of these. Quote tweets are counted along with regular replies.',
+  },
+  {
+    icon: 'hi-status-online',
+    name: 'Content type',
+    description:
+      'A tweet with mis/disinformation can have emotional, rational, or transactional content (though no transactional content was found in our data).',
+  },
+  {
+    icon: 'hi-identification',
+    name: 'Account type',
+    description:
+      'A Twitter account can be anonymous, identified, or media (though no media accounts were found in our data).',
+  },
+  {
+    icon: 'hi-emoji-happy',
+    name: 'Satire',
+    description:
+      'A tweet can be satirical (ironically containing mis/disinformation) or not.',
   },
 ];
 </script>
