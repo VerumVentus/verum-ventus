@@ -11,7 +11,10 @@ import 'highlight.js/styles/dracula.css';
 import { OhVueIcon, addIcons } from 'oh-vue-icons';
 import * as HiIcons from 'oh-vue-icons/icons/hi';
 import * as BiIcons from 'oh-vue-icons/icons/bi';
+import * as LaIcons from 'oh-vue-icons/icons/la';
 
+const La = Object.values({ ...LaIcons });
+addIcons(...La);
 const Hi = Object.values({ ...HiIcons });
 addIcons(...Hi);
 const Bi = Object.values({ ...BiIcons });

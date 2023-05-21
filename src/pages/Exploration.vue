@@ -30,7 +30,9 @@
     </p>
     <p>
       Running the following code below shows our raw data contains
-      <b>152 entries of data across 33 fields of data.</b>
+      <span class="highlighted">
+        152 entries of data across 33 fields of data.
+      </span>
     </p>
     <p>
       Among these 33 fields of data, there were
@@ -47,9 +49,12 @@
     <h2>Data Preparation</h2>
     <h3>Removing columns irrelevant to the topic.</h3>
     <p>
-      This study is a time analysis on how the Duterte Administration affected
-      the red-tagging of activists in the Philippines by observing the tweets of
-      Filipinos within the years 2016 to 2021.
+      This study is a <span class="highlighted">time analysis</span> on
+      <b>
+        how the Duterte Administration affected the red-tagging of activists in
+        the Philippines
+      </b>
+      by observing the tweets of Filipinos within the years 2016 to 2021.
     </p>
     <p>
       Because of this, only columns that can aid in understanding the topic are
@@ -83,7 +88,7 @@
         </div>
       </Box>
     </div>
-    <p>Our data is now relevant. ✅</p>
+    <p>The fields in our data are now relevant. ✅</p>
 
     <h3>Exploring which columns have NULL values.</h3>
     <p>
@@ -121,7 +126,7 @@
     />
     <p>Our data is complete. ✅</p>
 
-    <h3>Checking for uniqueness.</h3>
+    <h3>Checking for Uniqueness.</h3>
 
     <p>Some fields had no duplicates, such as ID, Tweet, and Tweet URL.</p>
     <p>
@@ -141,7 +146,7 @@
     </p>
     <p>We can move on to the next factor. ✅</p>
 
-    <h3>Checking for field Validity.</h3>
+    <h3>Checking for Validity.</h3>
     <p>
       For Timestamp, Joined and Date Posted, these fields contain
       <code>string</code> data types when its format should be in
@@ -160,12 +165,6 @@
       as Account type, Content type, Tweet type, and Satire vs Non-satire.
     </p>
     <p>Our data is now valid and in the correct format. ✅</p>
-    <p>
-      Our dataset has a well-defined structure with 152 rows and 21 columns.
-      This means that we have collected 151 tweets and each tweet is described
-      using 26 fields of information. Below is the list of features in our
-      dataset.
-    </p>
 
     <h3>Checking for Accuracy.</h3>
     <p>
@@ -176,6 +175,10 @@
       Additionally, since a typo error under the Satire vs Non-satire field
       caused there to be 3 categories instead of 2, this was corrected to
       reflect the only 2 categories that were needed.
+    </p>
+    <p>
+      Further, the field was renamed to "Satire" with boolean instead of
+      categorical entries.
     </p>
     <p>
       We can move on to the next section. Our data is ready for analysis. ✅
@@ -204,9 +207,9 @@
       income". We will explore more later on.
     </p>
 
-    <p>We now look at the average values of numerical fields:</p>
+    <p>We now look at the <b>mean</b> of numerical fields:</p>
     <highlight output="../codeblocks/exploration-numerical-average.out" />
-    <p>We also look at the median values:</p>
+    <p>We also look at the <b>median</b> values:</p>
     <highlight output="../codeblocks/exploration-numerical-median.out" />
 
     <p>
@@ -234,7 +237,7 @@
       "
       class="chart"
     />
-    <p>A boxplot was then used to visualize the distribution of likes.</p>
+    <p>A boxplot was then used to visualize the distribution of Likes.</p>
     <img
       v-lazy="
         `https://migopags.notion.site/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F6536f2b2-6623-4923-8049-7febb294091c%2FUntitled.png?id=6446937a-df8a-4a07-b342-a60b817ca138&table=block&spaceId=b30c35ff-1356-4d11-93cc-aefcfd03f1c4&width=1100&userId=&cache=v2`
@@ -262,7 +265,7 @@
       class="chart"
     />
 
-    <p>Removing 8 outliers, our data now has <b>144 rows</b>.</p>
+    <p>Removing eight outliers, our data now has <b>144 rows</b>.</p>
 
     <h3>Followers</h3>
 
@@ -291,7 +294,8 @@
     />
 
     <p>
-      4 rows were dropped in the process. There are now 140 rows in our data.
+      Four rows were dropped in the process. There are now <b>140 rows</b> in
+      our data.
     </p>
 
     <h3>Following</h3>
@@ -320,11 +324,16 @@
       class="chart"
     />
     <p>
-      There are now 137 rows in our data. We now proceed with feature
+      Since there are too many minor outliers to be dropped, the researches
+      decided to keep them for now.
+    </p>
+
+    <p>
+      There are now <b>137 rows in our data</b>. We now proceed with feature
       relationships.
     </p>
 
-    <h2>Time-series analysis</h2>
+    <h2>Time-series Analysis</h2>
     <p>
       This section aims to answer whether there is a correlation among features
       of our data.
@@ -355,8 +364,22 @@
     <p>
       In 2020, the number of tweets peaked during April and November. It must be
       noted that April 2020 was right after the lockdown protocols began and
-      hungry citizens began to clamor for food aid, while November 2020 was the
-      time Supertyphoon Goni struck the country.
+      hungry citizens began to clamor for food aid. As this resulted to protocol
+      violations from civilians, former president Duterte responded with an
+      impromptu address to the nation, saying
+      <a
+        href="https://foreignpolicy.com/2020/04/16/duterte-philippines-coronavirus-response-shoot-them-dead/"
+      >
+        Shoot them dead </a
+      >.
+    </p>
+    <p>
+      While November 2020 was the month when Duterte publicly
+      <a
+        href="https://www.rappler.com/nation/duterte-red-tags-carlos-zarate-progressive-groups-insult-laden-tirade-november-30-2020/"
+        >redtags</a
+      >
+      progressive groups.
     </p>
     <img
       v-lazy="
@@ -366,7 +389,7 @@
     />
     <p>
       In 2021, the peaks happened during February and April. February 2021
-      correlated with events such as the Supreme Court junking Bonbong Marcos
+      correlated with events such as the Supreme Court junking Bongbong Marcos
       Jr.’s electoral protest against Leni Robredo. April 2021 was the time
       community pantries started, and these were redtagged by many
       pro-administration Twitter users.
@@ -378,11 +401,14 @@
       class="chart"
     />
     <p>
-      In 2022, the peaks were towards the last half of the year. However, this
-      is out of the scope of our analysis since that period is no longer under
-      the Duterte administration. It must be noted, however, that the peak in
-      May 2022 coincides with the national elections. This is also a time that
-      redtagging was rampant as the electoral campaigns intensified.
+      In 2022, the peaks were towards the last half of the year. Despite this
+      being outside the period of the Duterte administration, the continuous
+      rise could still be understood as an effect of it.
+    </p>
+    <p>
+      It must be noted, however, that the peak in May 2022 coincides with the
+      national elections. This is also a time that redtagging was rampant as the
+      electoral campaigns intensified.
     </p>
 
     <h3>Tweet type vs Date posted</h3>
@@ -466,12 +492,14 @@
       with more replies also have more quote tweets.
     </p>
     <div>
-      <Box class="max-w-none bg-[#16191c]">
+      <Box class="max-w-none bg-[#16191c] text-light">
         <p>
           Removing outliers, the majority of our data contains tweets of
-          mis/disinformation by Anonymous accounts that are primarily text
-          replies with an emotional and non-satirical content that redtag
-          activists by claiming that activists are paid for rallying.
+          mis/disinformation by
+          <span class="highlighted">Anonymous</span> accounts that are primarily
+          <span class="highlighted">text replies </span> with an
+          <span class="highlighted">emotional</span> and
+          <span class="highlighted">non-satirical</span> content.
         </p>
 
         <p>

@@ -25,7 +25,7 @@ const lorem = ref(
       >
         {{ header }}
       </h5>
-      <p class="font-normal text-gray-700 dark:text-gray-400">
+      <p class="font-normal text-light/60">
         <slot></slot>
       </p>
     </div>

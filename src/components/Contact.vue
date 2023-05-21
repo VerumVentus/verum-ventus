@@ -22,7 +22,7 @@ const lorem = ref(
         v-lazy="src || 'mutya.webp'"
       />
       <div class="p-8 tracking-tight text-gray-900 dark:text-white">
-        <h1 class="text-2xl font-bold">
+        <h1 class="text-2xl font-bold my-1">
           {{ name || 'Jane Doe' }}
         </h1>
         <p class="font-normal font-mono text-gray-700 dark:text-gray-400">

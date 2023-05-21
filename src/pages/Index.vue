@@ -16,6 +16,7 @@ const active = ref(0);
 const scrollTo = (anchor) => {
   anchor.scrollIntoView({
     behavior: 'smooth',
+    block: 'center',
   });
 };
 
@@ -57,9 +58,8 @@ const scroll = async (e) => {
 };
 
 const arrow = async (e) => {
-  e.preventDefault();
-
   if (e.key === 'ArrowDown') {
+    e.preventDefault();
     const index = Math.min(active.value + 1, anchors.value.length - 1);
     const next = anchors.value[index];
     await scrollElemIntoView(next, {
@@ -68,6 +68,7 @@ const arrow = async (e) => {
     });
     active.value = index;
   } else if (e.key === 'ArrowUp') {
+    e.preventDefault();
     const index = Math.max(active.value - 1, 0);
     const prev = anchors.value[index];
     await scrollElemIntoView(prev, {
@@ -93,23 +94,18 @@ onUnmounted(() => {
   const body = window.document.body;
   body.removeEventListener('wheel', scroll, { passive: false });
   body.removeEventListener('keydown', arrow, { passive: false });
+  body.style.overflowY = 'auto';
   resizeObserver.unobserve(body);
 });
 
 onMounted(() => {
   const body = window.document.body;
+  body.style.overflowY = 'hidden';
   const anchor = document.querySelectorAll('.anchor');
   anchors.value = anchor;
   resizeObserver.observe(body);
 });
 </script>
-
-<style scoped>
-#app {
-  overflow-y: hidden;
-  height: 100vh;
-}
-</style>
 
 <template>
   <div
@@ -118,7 +114,7 @@ onMounted(() => {
     <div
       v-for="(anchor, index) in anchors"
       :key="anchor"
-      class="h-2 w-2 bg-base rounded-full hover:scale-150 hover:bg-[#8f3ced] hover:shadow-lg cursor-pointer"
+      class="h-2 w-2 bg-light rounded-full hover:scale-150 hover:bg-[#8f3ced] hover:shadow-lg cursor-pointer"
       :class="active === index ? 'bg-[#8f3ced] shadow-lg scale-150' : ''"
       @click="scrollTo(anchor), (active = index)"
     />
@@ -135,7 +131,7 @@ onMounted(() => {
             <h1 class="text-left">
               Following the
               <br />
-              Red Bricked Road
+              Red-bricked Road
               <br />
               to see where
               <br />it goes.
@@ -143,7 +139,7 @@ onMounted(() => {
             <p class="text-3xl font-mono text-left">
               A Data-Driven Investigation into the rampant
               <br />
-              Red Tagging of Activists in the Philippines
+              Red-tagging of Activists in the Philippines
             </p>
           </div>
         </div>
@@ -208,16 +204,16 @@ onMounted(() => {
         </div>
       </div>
       <div
-        class="h-1/4 w-full absolute -z-[1] bottom-0 bg-gradient-to-t from-[#101213]"
+        class="h-1/4 w-full absolute -z-[1] bottom-0 bg-gradient-to-t from-[#171a1c]"
       />
     </div>
     <div class="section anchor">
       <div
-        class="bg-img bg-[#101213]"
+        class="bg-img mix-blend-lighten"
         v-lazy:background-image="'/texture3.png'"
       />
       <div
-        class="h-1/4 w-full absolute -z-[1] top-0 bg-gradient-to-b from-[#101213]"
+        class="h-1/4 w-full absolute -z-[1] top-0 bg-gradient-to-b from-[#171a1c]"
       />
       <div class="w-full wrapper">
         <div class="">
@@ -229,10 +225,17 @@ onMounted(() => {
       </div>
     </div>
     <div class="section anchor">
-      <div class="bg-img bg-cover" v-lazy:background-image="'/wave.png'" />
+      <div
+        class="bg-img bg-[#191c1e] bg-cover"
+        v-lazy:background-image="'/wave.png'"
+      />
       <div class="wrapper">
         <div class="">
           <p class="text-8xl text-left font-extrabold">Meet our team</p>
+          <p>
+            In Verum Ventus, we are a three-man team of Filipino college
+            students pursuing the power of truth through data-driven research.
+          </p>
         </div>
         <div class="w-full flex justify-center gap-8">
           <Contact

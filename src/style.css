@@ -17,7 +17,7 @@ html {
 
   color-scheme: light dark;
 
-  @apply text-base bg-dark;
+  @apply text-light bg-dark;
 
   background-image: url(/texture.png);
 
@@ -50,6 +50,7 @@ body {
   place-items: center;
   min-width: 320px;
   min-height: 100vh;
+  @apply text-base;
 }
 
 .wrapper {
@@ -57,22 +58,22 @@ body {
 }
 
 .article-wrapper {
-  @apply mx-auto container w-screen xl:max-w-screen-lg text-left px-4;
+  @apply mx-auto relative container w-screen xl:max-w-screen-lg text-left px-4;
 }
 
 h1 {
   font-family: 'Alegreya';
-  @apply my-4 font-extrabold leading-none tracking-tight text-8xl;
+  @apply my-12 font-extrabold leading-none tracking-tight text-8xl;
 }
 
 h2 {
   font-family: 'Amethysta';
-  @apply text-4xl font-extrabold my-6;
+  @apply text-4xl font-extrabold my-8;
 }
 
 h3 {
   font-family: 'Amethysta';
-  @apply text-2xl font-extrabold my-4;
+  @apply text-2xl font-extrabold my-6;
 }
 
 p {
@@ -86,7 +87,7 @@ b {
 }
 
 code {
-  @apply text-sm font-mono bg-[#282a36] text-primary rounded-md px-2 py-1;
+  @apply text-sm font-mono text-secondary bg-secondary/10 rounded-md px-2 py-1;
 }
 
 .hljs {
@@ -94,7 +95,7 @@ code {
 }
 
 .highlighted {
-  @apply font-extrabold relative inline-block px-1 cursor-pointer;
+  @apply font-extrabold relative inline-block px-1 cursor-pointer z-10 text-light;
 }
 
 .highlighted::after {
@@ -188,7 +189,7 @@ div [lazy='loaded'] {
 }
 
 .badge {
-  @apply inline-block mx-1 px-2 py-1 font-bold leading-none bg-secondary text-base;
+  @apply inline-block mx-1 px-2 py-1 font-bold leading-none bg-secondary text-light;
 }
 
 .logo {

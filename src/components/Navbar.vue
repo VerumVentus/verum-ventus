@@ -13,11 +13,7 @@
     </Transition>
     <nav class="z-50 flex justify-between items-center py-8 wrapper">
       <router-link to="/">
-        <img
-          src="/logo.svg"
-          class="md:h-10 md:w-10 h-16 w-16 invert"
-          alt="Vite logo"
-        />
+        <Logo />
       </router-link>
       <div class="flex gap-8 uppercase">
         <router-link to="/" :class="currentRoute === '/' ? 'active-route' : ''">
@@ -72,6 +68,7 @@
 import { computed } from 'vue';
 import { onMounted, ref } from 'vue';
 import { useRoute } from 'vue-router';
+import Logo from './Logo.vue';
 const route = useRoute();
 
 const currentRoute = computed(() => route.path);
