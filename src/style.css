@@ -240,3 +240,7 @@ div [lazy='loaded'] {
 .chart {
   @apply max-w-md mx-auto rounded-md;
 }
+
+.plot-container.plotly {
+  @apply rounded-xl overflow-clip;
+}

@@ -1,6 +1,6 @@
 <template>
   <div class="article-wrapper">
-    <navbar class="relative block invisible" />
+    <Navbar class="relative block invisible" />
     <h1>Data Exploration</h1>
     <h2>Let's now explore the data.</h2>
     <p>
@@ -224,114 +224,11 @@
     <Embed gist-id="7dcc08b4f67edee9334390f280849097" file="standard-dev.csv" />
 
     <h2>Checking for Outliers</h2>
-    <h3>Likes</h3>
-    <p>
-      We explore outliers in the Likes variable. An outlier was found where a
-      satirical tweet earned more than 400 likes. This outlier was dropped since
-      this was not highly significant to the analysis.
-    </p>
+    <Likes />
 
-    <img
-      v-lazy="
-        `https://migopags.notion.site/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2Fc7da30e4-6fa9-4c89-8070-e3f1ca756f8d%2FUntitled.png?id=2f0db2be-be86-4a61-93ee-fa69a4a5c609&table=block&spaceId=b30c35ff-1356-4d11-93cc-aefcfd03f1c4&width=2000&userId=&cache=v2`
-      "
-      class="chart"
-    />
-    <p>A boxplot was then used to visualize the distribution of Likes.</p>
-    <img
-      v-lazy="
-        `https://migopags.notion.site/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F6536f2b2-6623-4923-8049-7febb294091c%2FUntitled.png?id=6446937a-df8a-4a07-b342-a60b817ca138&table=block&spaceId=b30c35ff-1356-4d11-93cc-aefcfd03f1c4&width=1100&userId=&cache=v2`
-      "
-      class="chart"
-    />
-    <p>
-      From this, the researchers decided to drop the 3 outliers that exceeded a
-      <code>z-score</code> of 3. These were not highly significant to the
-      analysis.
-    </p>
+    <Followers />
 
-    <p>We now look at the distribution of likes over time.</p>
-
-    <p>
-      The high number of likes in the distribution may be due to accounts having
-      a large number of followers. Tweets with more than 10 likes were dropped
-      for the analysis. The final graph is as follows:
-    </p>
-
-    <img
-      v-lazy="
-        `https://migopags.notion.site/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2Faf2f0e85-eafe-4727-82a8-088de1e62b3f%2FUntitled.png?id=b3e45482-29e4-422d-a258-135e909b66f8&table=block&spaceId=b30c35ff-1356-4d11-93cc-aefcfd03f1c4&width=1140&userId=&cache=v2`
-      "
-      class="chart"
-    />
-
-    <p>Removing eight outliers, our data now has <b>144 rows</b>.</p>
-
-    <h3>Followers</h3>
-
-    <p>Let us look at the initial distribution of followers:</p>
-
-    <img
-      v-lazy="
-        `https://migopags.notion.site/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2Fe4fa7f6d-c2cc-42cd-8062-1c30c77b1f3a%2FUntitled.png?id=b9dfcafb-724b-406b-a96f-6151036b6d6f&table=block&spaceId=b30c35ff-1356-4d11-93cc-aefcfd03f1c4&width=1200&userId=&cache=v2`
-      "
-      class="chart"
-    />
-
-    <p>
-      Accounts with a followers z-score of more than 3 were dropped from the
-      data. To note, the outlier with more than 4000 followers was a columnist,
-      though their tweet had low engagements.
-    </p>
-
-    <p>The final distribution is as follows:</p>
-
-    <img
-      v-lazy="
-        `https://migopags.notion.site/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F22542198-fc8e-4025-8814-4fd4d1960ccf%2FUntitled.png?id=7f147cd0-86a0-4392-ad54-d3055c69fc9c&table=block&spaceId=b30c35ff-1356-4d11-93cc-aefcfd03f1c4&width=1180&userId=&cache=v2`
-      "
-      class="chart"
-    />
-
-    <p>
-      Four rows were dropped in the process. There are now <b>140 rows</b> in
-      our data.
-    </p>
-
-    <h3>Following</h3>
-    <p>We look at the initial distribution of our <b>Following</b> data.</p>
-    <img
-      v-lazy="
-        `https://migopags.notion.site/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F7a7d63e6-35c9-4dba-8af3-7672255e2b85%2FUntitled.png?id=75c17eb2-80b1-4572-bd59-a2744c1f9c9e&table=block&spaceId=b30c35ff-1356-4d11-93cc-aefcfd03f1c4&width=1160&userId=&cache=v2`
-      "
-      class="chart"
-    />
-    <p>
-      After removing 3 outliers with a z-score of more than 2, this was the
-      distribution:
-    </p>
-    <img
-      v-lazy="
-        `https://migopags.notion.site/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F8173f818-a185-4939-848d-d4d1518b2e34%2FUntitled.png?id=0512bf41-4cff-49be-b4fe-cacc1f66e7f5&table=block&spaceId=b30c35ff-1356-4d11-93cc-aefcfd03f1c4&width=1160&userId=&cache=v2`
-      "
-      class="chart"
-    />
-    <p>This is the boxplot:</p>
-    <img
-      v-lazy="
-        `https://migopags.notion.site/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F787b125d-8df8-4459-931f-c8f210f39ece%2FUntitled.png?id=1b0fee1e-2d8d-4f19-b8f4-c58f61bc8b3b&table=block&spaceId=b30c35ff-1356-4d11-93cc-aefcfd03f1c4&width=1120&userId=&cache=v2`
-      "
-      class="chart"
-    />
-    <p>
-      Since there are too many minor outliers to be dropped, the researches
-      decided to keep them for now.
-    </p>
-
-    <p>
-      There are now <b>137 rows in our data</b>. We now proceed with feature
-      relationships.
-    </p>
+    <Following />
 
     <h2>Time-series Analysis</h2>
     <p>
@@ -339,77 +236,7 @@
       of our data.
     </p>
 
-    <h3>Tweet count vs Date posted</h3>
-    <p>Let us look at the frequency of tweets over time.</p>
-    <img
-      v-lazy="
-        `https://migopags.notion.site/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2Fab858734-247e-42f2-b3ad-26034a9774aa%2FUntitled.png?id=97c791c8-d026-4773-bed1-ad6dd419db9d&table=block&spaceId=b30c35ff-1356-4d11-93cc-aefcfd03f1c4&width=1120&userId=&cache=v2`
-      "
-      class="chart"
-    />
-    <p>
-      There was a sharp increase in the number of tweets in 2020 to 2022. It is
-      known that these are the years of the pandemic and the lockdown policies.
-      There was a shift to almost purely online communication amid the
-      politically charged atmosphere. Note that a huge number of tweets come
-      from Anonymous users.
-    </p>
-    <p>We look at the tweet frequency per year.</p>
-    <img
-      v-lazy="
-        `https://migopags.notion.site/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F57a26442-2b82-4ef2-aab7-2beef2f20dbf%2FUntitled.png?id=42ff8866-ac45-400f-934f-62794f3369e8&table=block&spaceId=b30c35ff-1356-4d11-93cc-aefcfd03f1c4&width=1110&userId=&cache=v2`
-      "
-      class="chart"
-    />
-    <p>
-      In 2020, the number of tweets peaked during April and November. It must be
-      noted that April 2020 was right after the lockdown protocols began and
-      hungry citizens began to clamor for food aid. As this resulted to protocol
-      violations from civilians, former president Duterte responded with an
-      impromptu address to the nation, saying
-      <a
-        href="https://foreignpolicy.com/2020/04/16/duterte-philippines-coronavirus-response-shoot-them-dead/"
-      >
-        Shoot them dead </a
-      >.
-    </p>
-    <p>
-      While November 2020 was the month when Duterte publicly
-      <a
-        href="https://www.rappler.com/nation/duterte-red-tags-carlos-zarate-progressive-groups-insult-laden-tirade-november-30-2020/"
-        >redtags</a
-      >
-      progressive groups.
-    </p>
-    <img
-      v-lazy="
-        `https://migopags.notion.site/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2Fcba1ac07-3ead-4126-9129-eb71aadb115f%2FUntitled.png?id=60530c42-4063-4a82-96b4-0a1d6d0fc5e4&table=block&spaceId=b30c35ff-1356-4d11-93cc-aefcfd03f1c4&width=1130&userId=&cache=v2`
-      "
-      class="chart"
-    />
-    <p>
-      In 2021, the peaks happened during February and April. February 2021
-      correlated with events such as the Supreme Court junking Bongbong Marcos
-      Jr.’s electoral protest against Leni Robredo. April 2021 was the time
-      community pantries started, and these were redtagged by many
-      pro-administration Twitter users.
-    </p>
-    <img
-      v-lazy="
-        `https://migopags.notion.site/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F7cee33b3-a95f-406e-8739-d7fde640d85b%2FUntitled.png?id=119c1aa0-c3d1-46bc-b9d1-a843a43675e9&table=block&spaceId=b30c35ff-1356-4d11-93cc-aefcfd03f1c4&width=1120&userId=&cache=v2`
-      "
-      class="chart"
-    />
-    <p>
-      In 2022, the peaks were towards the last half of the year. Despite this
-      being outside the period of the Duterte administration, the continuous
-      rise could still be understood as an effect of it.
-    </p>
-    <p>
-      It must be noted, however, that the peak in May 2022 coincides with the
-      national elections. This is also a time that redtagging was rampant as the
-      electoral campaigns intensified.
-    </p>
+    <Yearly />
 
     <h3>Tweet type vs Date posted</h3>
     <p>We look at the frequency of tweet types:</p>
@@ -519,6 +346,10 @@ import Navbar from '@/components/Navbar.vue';
 import Box from '@/components/Box.vue';
 import Embed from '@/components/Embed.vue';
 import Highlight from '@/components/Highlight.vue';
+import Likes from '@/components/plots/Likes.vue';
+import Followers from '@/components/plots/Followers.vue';
+import Following from '@/components/plots/Following.vue';
+import Yearly from '@/components/plots/Yearly.vue';
 
 const categorical = [
   'ID',

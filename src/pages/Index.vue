@@ -247,7 +247,12 @@ onMounted(() => {
             name="Migo Pagdanganan"
             email="avpagdanganan@up.edu.ph"
             src="migo.jpg"
-          />
+          >
+            cast down the mighty, lift up the lowly ✊|
+            <a href="https://twitter.com/UPIMPULSE">@UPIMPULSE</a> ✍️|
+            <a href="https://twitter.com/AghamYouth_Engg">@AghamYouth_Engg</a>
+            ⚙️
+          </Contact>
           <Contact
             name="Jarred Luzada"
             email="jeluzada@up.edu.ph"
