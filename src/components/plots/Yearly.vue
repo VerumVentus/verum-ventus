@@ -25,13 +25,13 @@
       <v-plotly
         :key="`year2019TweetCountData`"
         :data="year2019TweetCountData"
-        :layout="yearlyLayout"
+        :layout="year2019Layout"
         :config="config"
       />
       <v-plotly
         :key="`year2020TweetCountData`"
         :data="year2020TweetCountData"
-        :layout="yearlyLayout"
+        :layout="year2020Layout"
         :config="config"
       />
     </div>
@@ -39,13 +39,13 @@
       <v-plotly
         :key="`year2021TweetCountData`"
         :data="year2021TweetCountData"
-        :layout="yearlyLayout"
+        :layout="year2021Layout"
         :config="config"
       />
       <v-plotly
         :key="`year2022TweetCountData`"
         :data="year2022TweetCountData"
-        :layout="yearlyLayout"
+        :layout="year2022Layout"
         :config="config"
       />
     </div>
@@ -119,8 +119,7 @@ const yearlyTweetCountLayout = ref({
   ...settings,
 });
 
-const yearlyLayout = ref({
-  title: 'Amount of tweets posted yearly',
+const yearlyLayout = {
   xaxis: {
     title: 'Date',
     showgrid: false,
@@ -132,6 +131,23 @@ const yearlyLayout = ref({
     gridcolor: settings.gridcolor,
   },
   ...settings,
+};
+
+const year2019Layout = ref({
+  title: 'Amount of tweets posted in 2019',
+  ...yearlyLayout,
+});
+const year2020Layout = ref({
+  title: 'Amount of tweets posted in 2020',
+  ...yearlyLayout,
+});
+const year2021Layout = ref({
+  title: 'Amount of tweets posted in 2021',
+  ...yearlyLayout,
+});
+const year2022Layout = ref({
+  title: 'Amount of tweets posted in 2022',
+  ...yearlyLayout,
 });
 
 const yearlyTweetCountData = ref([]);
