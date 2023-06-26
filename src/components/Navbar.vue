@@ -32,12 +32,6 @@
           Exploration
         </router-link>
         <router-link
-          to="/methods"
-          :class="currentRoute === '/methods' ? 'active-route' : ''"
-        >
-          Methods
-        </router-link>
-        <router-link
           to="/results"
           :class="currentRoute === '/results' ? 'active-route' : ''"
         >
