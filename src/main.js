@@ -7,7 +7,7 @@ import VueClickAway from 'vue3-click-away';
 import VueLazyload from 'vue-lazyload';
 import VueHighlightJS from 'vue3-highlightjs';
 import { VuePlotly } from 'vue3-plotly';
-import 'highlight.js/styles/atom-one-dark.css';
+import './dracula.css';
 
 import { OhVueIcon, addIcons } from 'oh-vue-icons';
 import * as HiIcons from 'oh-vue-icons/icons/hi';

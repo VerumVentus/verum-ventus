@@ -68,12 +68,12 @@ h1 {
 
 h2 {
   font-family: 'Amethysta';
-  @apply text-4xl font-extrabold my-8;
+  @apply text-4xl font-extrabold my-8 mt-16;
 }
 
 h3 {
   font-family: 'Amethysta';
-  @apply text-2xl font-extrabold my-6;
+  @apply text-2xl font-extrabold my-6 mt-12;
 }
 
 p {

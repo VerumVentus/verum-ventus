@@ -238,86 +238,14 @@
 
     <Yearly />
 
-    <h3>Tweet type vs Date posted</h3>
-    <p>We look at the frequency of tweet types:</p>
-    <img
-      v-lazy="
-        `https://migopags.notion.site/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2Fba3d8d8d-0977-4b4f-ada4-887fde892000%2FUntitled.png?id=8e8dc6b7-f2b6-404a-aa7b-0a05c0aeb923&table=block&spaceId=b30c35ff-1356-4d11-93cc-aefcfd03f1c4&width=1340&userId=&cache=v2`
-      "
-      class="chart"
-    />
-    <p>
-      Indeed, a majority are text replies. Next, we look at the tweet types
-      versus time.
-    </p>
-    <img
-      v-lazy="
-        `https://migopags.notion.site/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2Fbf86c768-7f10-4340-ad4d-8c7c293021f9%2FUntitled.png?id=9a64c524-f140-4ce3-856a-62379ac78d87&table=block&spaceId=b30c35ff-1356-4d11-93cc-aefcfd03f1c4&width=1120&userId=&cache=v2`
-      "
-      class="chart"
-    />
-    <p>
-      While other tweet types remained relatively stagnant, the text replies
-      became the primary way mis/disinformation was spreading especially since
-      the pandemic.
-    </p>
+    <TweetType />
 
-    <h3>Content type vs Date posted</h3>
-    <p>We look at the frequency of content type:</p>
-    <img
-      v-lazy="
-        `https://migopags.notion.site/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2Ffc0dc573-75fd-485d-b1c9-47cf759a2d89%2FUntitled.png?id=af168d01-9430-4b3d-8f0e-03d60a3e0250&table=block&spaceId=b30c35ff-1356-4d11-93cc-aefcfd03f1c4&width=1120&userId=&cache=v2`
-      "
-      class="chart"
-    />
-    <p>
-      Indeed, a majority of the tweets are emotional, with Anonymous accounts
-      greatly contributing to these. Now we look at their progression over the
-      years.
-    </p>
-    <img
-      v-lazy="
-        `https://migopags.notion.site/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F9ffeeb98-20bf-4023-9732-9e9b961380e2%2FUntitled.png?id=0a58a561-094b-44ee-9f37-b3653aa5ea70&table=block&spaceId=b30c35ff-1356-4d11-93cc-aefcfd03f1c4&width=1120&userId=&cache=v2`
-      "
-      class="chart"
-    />
-    <p>Indeed, this spike in frequency correlates to the pandemic period.</p>
+    <ContentType />
 
-    <h3>Date posted vs Date joined</h3>
-    <p>
-      We look at the relationship between the posting of a tweet and the account
-      creation of the user tweeting it.
-    </p>
-    <img
-      v-lazy="
-        `https://migopags.notion.site/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F0c182093-1701-45ad-877e-9a1c61e07667%2FUntitled.png?id=7950af9f-0c52-42ec-a8bc-baaa88c50a50&table=block&spaceId=b30c35ff-1356-4d11-93cc-aefcfd03f1c4&width=980&userId=&cache=v2`
-      "
-      class="chart"
-    />
-    <p>
-      While there is great variation, notice that there is an increasing density
-      towards the upper right of the graph, signifying that there is a
-      correlation between recently made accounts and recently made posted
-      tweets.
-    </p>
+    <Posted />
 
-    <h3>Tweet engagement correlation</h3>
-    <p>
-      For tweet engagement, we look at the correlation among Likes, Replies,
-      Retweets, and Quote tweets.
-    </p>
-    <img
-      v-lazy="
-        `https://migopags.notion.site/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F5bc2ddbf-24cc-4333-999f-6c3901973d60%2FUntitled.png?id=05240737-7d22-43b2-aa91-fa5e35fc8c09&table=block&spaceId=b30c35ff-1356-4d11-93cc-aefcfd03f1c4&width=1030&userId=&cache=v2`
-      "
-      class="chart"
-    />
-    <p>
-      The strongest correlations in this graph are of that between likes and
-      retweets, and between replies and quote tweets. It means it is highly
-      likely that a tweet with more likes also has more retweets, and tweets
-      with more replies also have more quote tweets.
-    </p>
+    <Engagement />
+
     <div>
       <Box class="max-w-none bg-[#16191c] text-light">
         <p>
@@ -350,6 +278,10 @@ import Likes from '@/components/plots/Likes.vue';
 import Followers from '@/components/plots/Followers.vue';
 import Following from '@/components/plots/Following.vue';
 import Yearly from '@/components/plots/Yearly.vue';
+import TweetType from '@/components/plots/TweetType.vue';
+import ContentType from '@/components/plots/ContentType.vue';
+import Posted from '@/components/plots/Posted.vue';
+import Engagement from './Engagement.vue';
 
 const categorical = [
   'ID',

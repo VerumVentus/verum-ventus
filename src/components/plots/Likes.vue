@@ -10,12 +10,14 @@
 
   <div class="grid grid-cols-2 gap-4">
     <v-plotly
+      class="lg:col-span-1 col-span-2"
       :key="`likesXpostedScatterData`"
       :data="likesXpostedScatterData"
       :layout="likesXpostedScatterLayout"
       :config="config"
     />
     <v-plotly
+      class="lg:col-span-1 col-span-2"
       :key="`likesXpostedBoxData`"
       :data="likesXpostedBoxData"
       :layout="likesXpostedBoxLayout"
@@ -132,6 +134,12 @@ const loadDroppedLikesOutlier = () => {
             type: 'scatter',
             mode: 'markers',
             marker: { color: '#8f3ced' },
+            hoverlabel: {
+              bordercolor: '#00000000',
+              font: {
+                color: 'white',
+              },
+            },
           },
         ];
       },
@@ -175,6 +183,12 @@ const loadExploration = () => {
             mode: 'markers',
             hovertemplate: '%{x}: %{y}',
             marker: { color: '#8f3ced' },
+            hoverlabel: {
+              bordercolor: '#00000000',
+              font: {
+                color: 'white',
+              },
+            },
           },
         ];
         likesXpostedBoxData.value = [
@@ -184,6 +198,12 @@ const loadExploration = () => {
             y: csvData.map((row) => row['Likes']),
             type: 'box',
             marker: { color: '#8f3ced' },
+            hoverlabel: {
+              bordercolor: '#00000000',
+              font: {
+                color: 'white',
+              },
+            },
           },
         ];
       },

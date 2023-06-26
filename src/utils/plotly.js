@@ -1,5 +1,5 @@
 const settings = {
-  plot_bgcolor: '#282c34',
+  plot_bgcolor: '#282a36',
   paper_bgcolor: '#202229',
   font: {
     color: '#cccccc',

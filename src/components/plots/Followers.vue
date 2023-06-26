@@ -5,12 +5,14 @@
 
   <div class="grid grid-cols-2 gap-4">
     <v-plotly
+      class="lg:col-span-1 col-span-2"
       :key="`followersXpostedScatterData`"
       :data="followersXpostedScatterData"
       :layout="followersXpostedScatterLayout"
       :config="config"
     />
     <v-plotly
+      class="lg:col-span-1 col-span-2"
       :key="`followersXpostedBoxData`"
       :data="followersXpostedBoxData"
       :layout="followersXpostedBoxLayout"
@@ -124,6 +126,12 @@ const loadDroppedFollowersOutlier = () => {
             type: 'scatter',
             mode: 'markers',
             marker: { color: '#c8245b' },
+            hoverlabel: {
+              bordercolor: '#00000000',
+              font: {
+                color: 'white',
+              },
+            },
           },
         ];
       },
@@ -176,6 +184,12 @@ const loadExploration = () => {
             name: 'Followers',
             type: 'box',
             marker: { color: '#c8245b' },
+            hoverlabel: {
+              bordercolor: '#00000000',
+              font: {
+                color: 'white',
+              },
+            },
           },
         ];
       },

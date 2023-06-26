@@ -2,14 +2,12 @@
   <h3>Tweet count vs Date posted</h3>
   <p>Let us look at the frequency of tweets over time.</p>
 
-  <div class="grid grid-cols-1 gap-4">
-    <v-plotly
-      :key="`followersXpostedScatterData`"
-      :data="yearlyTweetCountData"
-      :layout="yearlyTweetCountLayout"
-      :config="config"
-    />
-  </div>
+  <v-plotly
+    :key="`followersXpostedScatterData`"
+    :data="yearlyTweetCountData"
+    :layout="yearlyTweetCountLayout"
+    :config="config"
+  />
 
   <p>
     There was a sharp increase in the number of tweets in 2020 to 2022. It is
@@ -23,12 +21,14 @@
   <div class="flex flex-col gap-4">
     <div class="grid grid-cols-2 gap-4">
       <v-plotly
+        class="lg:col-span-1 col-span-2"
         :key="`year2019TweetCountData`"
         :data="year2019TweetCountData"
         :layout="year2019Layout"
         :config="config"
       />
       <v-plotly
+        class="lg:col-span-1 col-span-2"
         :key="`year2020TweetCountData`"
         :data="year2020TweetCountData"
         :layout="year2020Layout"
@@ -37,12 +37,14 @@
     </div>
     <div class="grid grid-cols-2 gap-4">
       <v-plotly
+        class="lg:col-span-1 col-span-2"
         :key="`year2021TweetCountData`"
         :data="year2021TweetCountData"
         :layout="year2021Layout"
         :config="config"
       />
       <v-plotly
+        class="lg:col-span-1 col-span-2"
         :key="`year2022TweetCountData`"
         :data="year2022TweetCountData"
         :layout="year2022Layout"
@@ -112,7 +114,7 @@ const yearlyTweetCountLayout = ref({
     zeroline: false,
   },
   yaxis: {
-    title: 'Followers',
+    title: 'Count',
     showline: false,
     gridcolor: settings.gridcolor,
   },
@@ -126,7 +128,7 @@ const yearlyLayout = {
     zeroline: false,
   },
   yaxis: {
-    title: 'Followers',
+    title: 'Count',
     showline: false,
     gridcolor: settings.gridcolor,
   },
@@ -221,6 +223,12 @@ const loadExploration = () => {
             marker: {
               color: '#8f3ced',
             },
+            hoverlabel: {
+              bordercolor: '#00000000',
+              font: {
+                color: 'white',
+              },
+            },
           },
           {
             x: sortedYears,
@@ -229,6 +237,12 @@ const loadExploration = () => {
             type: 'scatter',
             marker: {
               color: '#c8245b',
+            },
+            hoverlabel: {
+              bordercolor: '#00000000',
+              font: {
+                color: 'white',
+              },
             },
           },
         ];
@@ -265,6 +279,12 @@ const loadExploration = () => {
             marker: {
               color: '#c8245b',
             },
+            hoverlabel: {
+              bordercolor: '#00000000',
+              font: {
+                color: 'white',
+              },
+            },
           },
         ];
         year2020TweetCountData.value = [
@@ -278,6 +298,12 @@ const loadExploration = () => {
             type: 'scatter',
             marker: {
               color: '#c8245b',
+            },
+            hoverlabel: {
+              bordercolor: '#00000000',
+              font: {
+                color: 'white',
+              },
             },
           },
         ];
@@ -293,6 +319,12 @@ const loadExploration = () => {
             marker: {
               color: '#c8245b',
             },
+            hoverlabel: {
+              bordercolor: '#00000000',
+              font: {
+                color: 'white',
+              },
+            },
           },
         ];
         year2022TweetCountData.value = [
@@ -306,6 +338,12 @@ const loadExploration = () => {
             type: 'scatter',
             marker: {
               color: '#c8245b',
+            },
+            hoverlabel: {
+              bordercolor: '#00000000',
+              font: {
+                color: 'white',
+              },
             },
           },
         ];
