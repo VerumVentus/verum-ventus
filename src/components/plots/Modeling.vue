@@ -1,42 +1,13 @@
 <template>
-  <div class="article-wrapper">
-    <Navbar class="relative block invisible" />
-    <h1>Results</h1>
-    <h3>Statistical Analysis</h3>
-    <p>
-      Based on our statistical analysis using Linear Regression where we
-      obtained a p-value of <code>2.90e-08</code>, we reject the null hypothesis
-      reject the null hypothesis that the trend remains constant. Instead, we
-      find evidence supporting the alternative hypothesis that
-      <span class="highlighted">
-        the trend of red-tagging of activists in Twitter increased
-      </span>
-      during the course of the Duterte administration.
-    </p>
-
-    <v-plotly
-      :key="`yearlyTweetCountData`"
-      :data="modelingData"
-      :layout="modelingLayout"
-      :config="config"
-    />
-    <h3>Data Modeling</h3>
-    <p>
-      In our second modeling approach, we applied peak detection technique to
-      identify spikes in the frequency of a red-tagging within our dataset. We
-      then correlated these peaks with real-life events. Here's what we found:
-    </p>
-  </div>
+  <v-plotly
+    :key="`modelingData`"
+    :data="modelingData"
+    :layout="modelingLayout"
+    :config="config"
+  />
 </template>
 
-<style scoped>
-html {
-  overflow-y: auto;
-}
-</style>
-
 <script setup>
-import Navbar from '@/components/Navbar.vue';
 import { ref } from 'vue';
 import settings from '@/utils/plotly';
 

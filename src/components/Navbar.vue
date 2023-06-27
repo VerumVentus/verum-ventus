@@ -1,10 +1,5 @@
 <template>
-  <div
-    class="min-w-full z-50"
-    @wheel.prevent
-    @touchmove.prevent
-    @scroll.prevent
-  >
+  <div class="min-w-full z-50">
     <Transition name="grow">
       <div
         v-if="scrolled"
@@ -36,6 +31,12 @@
           :class="currentRoute === '/results' ? 'active-route' : ''"
         >
           Results
+        </router-link>
+        <router-link
+          to="/summary"
+          :class="currentRoute === '/summary' ? 'active-route' : ''"
+        >
+          Summary
         </router-link>
         <router-link
           to="/team"
@@ -76,9 +77,9 @@ onMounted(() => {
   const nav = document.querySelector('nav');
   const navHeight = nav.offsetHeight;
 
-  const app = document.querySelector('body');
+  const app = document.querySelector('html');
 
-  app.addEventListener('scroll', () => {
+  window.addEventListener('scroll', () => {
     if (app.scrollTop > navHeight) {
       scrolled.value = true;
     } else {

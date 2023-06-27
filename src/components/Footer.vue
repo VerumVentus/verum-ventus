@@ -13,22 +13,17 @@
             Verum Ventus
           </h1>
         </a>
-        <ul
-          class="flex flex-wrap items-center mb-6 text-sm font-medium text-gray-500 sm:mb-0 dark:text-gray-400"
-        >
-          <li>
-            <a href="#" class="mr-4 hover:underline md:mr-6">About</a>
-          </li>
-          <li>
-            <a href="#" class="mr-4 hover:underline md:mr-6">Privacy Policy</a>
-          </li>
-          <li>
-            <a href="#" class="mr-4 hover:underline md:mr-6">Licensing</a>
-          </li>
-          <li>
-            <a href="#" class="hover:underline">Contact</a>
-          </li>
-        </ul>
+
+        <div class="flex items-center gap-4">
+          <div class="flex flex-col text-right">
+            <b>University of the Philippines - Diliman</b>
+            <span>Department of Computer Science</span>
+          </div>
+          <div class="flex gap-4 my-8">
+            <Image class="h-20 w-20" :src="`/up.png`" />
+            <Image class="h-20 w-20" :src="`/dcs.png`" />
+          </div>
+        </div>
       </div>
       <hr
         class="my-4 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8"
@@ -44,5 +39,6 @@
 </template>
 
 <script setup>
+import Image from './Image.vue';
 import Logo from './Logo.vue';
 </script>

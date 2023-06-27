@@ -4,7 +4,10 @@
       <DisclosureButton
         class="flex w-full h-[3rem] items-center justify-between rounded-none px-4 py-2 text-left text-sm font-medium outline-none"
       >
-        <span>Codeblock</span>
+        <div class="flex gap-2 items-center justify-center">
+          <v-icon name="hi-terminal" />
+          <span class="leading-[100%] translate-y-[4px]">Codeblock</span>
+        </div>
         <div class="flex items-center gap-2">
           <code v-if="!open"> Expand </code>
           <v-icon

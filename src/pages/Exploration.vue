@@ -37,21 +37,27 @@
           class="w-full grid lg:grid-cols-3 grid-cols-1 lg:divide-x divide-white/10 lg:divide-y-0 divide-y gap-4 divide-base/20"
         >
           <div class="flex items-center flex-col">
-            <h3>Float</h3>
+            <h5 class="mb-2 text-2xl font-bold tracking-tight text-light">
+              Float
+            </h5>
             <div class="w-4/5">
-              <p>4 Fields</p>
+              <p class="my-0">4 Fields</p>
             </div>
           </div>
           <div class="flex items-center flex-col">
-            <h3>Integer</h3>
+            <h5 class="mb-2 text-2xl font-bold tracking-tight text-light">
+              Integer
+            </h5>
             <div class="w-4/5">
-              <p>7 Fields</p>
+              <p class="my-0">7 Fields</p>
             </div>
           </div>
           <div class="flex items-center flex-col">
-            <h3>Categorical</h3>
+            <h5 class="mb-2 text-2xl font-bold tracking-tight text-light">
+              Categorical
+            </h5>
             <div class="w-4/5">
-              <p>22 Fields</p>
+              <p class="my-0">22 Fields</p>
             </div>
           </div>
         </div>
@@ -264,8 +270,10 @@
 
     <h3>Trends of Account Type, Tweet Type and Content Type</h3>
 
+    <p>Here we see the frequency of Tweet Types.</p>
     <TweetType />
 
+    <p>Here's for the Content Types.</p>
     <ContentType />
 
     <p>
@@ -280,7 +288,32 @@
       intend to investigate on troll farms in the Philippines.
     </p>
 
+    <h3>Date Posted vs Date Joined</h3>
+    <p>
+      We look at the relationship between the posting of a tweet and the account
+      creation of the user tweeting it.
+    </p>
+
     <Posted />
+
+    <p>
+      While there is great variation, notice that there is an increasing density
+      towards the upper right of the graph.
+    </p>
+    <p>
+      This suggests that
+      <b>
+        many of the recent tweets targetting activists on Twitter were posted by
+        newly made accounts,
+      </b>
+      a behavior which can be associated with the recent rise of troll farms in
+      the country.
+    </p>
+
+    <p>
+      This observation can also be a good place to start for future researchers
+      who intend to further investigate on troll farms in the Philippines.
+    </p>
 
     <Engagement />
 
@@ -304,8 +337,27 @@
         </p>
       </Box>
     </div>
+
+    <router-link to="/results" class="flex items-center gap-4 mt-8 group">
+      <p>
+        <span class="highlighted group-hover:text-primary"
+          >Next chapter: Results and Discussions</span
+        >
+      </p>
+
+      <v-icon
+        name="hi-arrow-right"
+        class="transform transition-all group-hover:translate-x-3"
+      />
+    </router-link>
   </div>
 </template>
+
+<style scoped>
+html {
+  overflow-y: auto;
+}
+</style>
 
 <script setup>
 import Navbar from '@/components/Navbar.vue';
@@ -319,7 +371,7 @@ import Yearly from '@/components/plots/Yearly.vue';
 import TweetType from '@/components/plots/TweetType.vue';
 import ContentType from '@/components/plots/ContentType.vue';
 import Posted from '@/components/plots/Posted.vue';
-import Engagement from './Engagement.vue';
+import Engagement from '@/components/plots/Engagement.vue';
 import Card from '@/components/Card.vue';
 
 const categorical = [

@@ -1,6 +1,4 @@
 <template>
-  <p>We look at the frequency of tweet types:</p>
-
   <div class="grid grid-cols-2 gap-4">
     <v-plotly
       class="lg:col-span-1 col-span-2"

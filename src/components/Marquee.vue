@@ -1,6 +1,6 @@
 <template>
   <Vue3Marquee
-    class="w-[150vw] -translate-x-4 flex items-center transform absolute py-7 bg-[#ead62a] text-[#24200a]"
+    class="w-[150vw] -translate-x-4 flex items-center transform py-7 bg-[#ead62a] text-[#24200a]"
     :clone="true"
     :duration="16"
     :direction="direction"

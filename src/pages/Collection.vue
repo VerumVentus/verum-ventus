@@ -70,6 +70,19 @@
         :icon="type.icon"
       />
     </div>
+
+    <router-link to="/results" class="flex items-center gap-4 mt-8 group">
+      <p>
+        <span class="highlighted group-hover:text-primary"
+          >Next chapter: Exploring the Data</span
+        >
+      </p>
+
+      <v-icon
+        name="hi-arrow-right"
+        class="transform transition-all group-hover:translate-x-3"
+      />
+    </router-link>
   </div>
 </template>
 
@@ -147,3 +160,9 @@ const types = [
   },
 ];
 </script>
+
+<style scoped>
+html {
+  overflow-y: auto;
+}
+</style>

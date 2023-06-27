@@ -96,7 +96,7 @@ code {
 }
 
 .highlighted {
-  @apply font-extrabold relative inline-block px-1 cursor-pointer z-10 text-light;
+  @apply font-extrabold relative inline-block cursor-pointer z-10 text-light;
 }
 
 .highlighted::after {
@@ -108,7 +108,13 @@ code {
   margin: auto;
   width: calc(100% - 0.5rem);
   z-index: -1;
+  transition: all 0.2s ease;
   @apply border-b-4 border-dotted border-secondary;
+}
+
+.highlighted:hover::after {
+  left: 0;
+  transition: all 0.2s ease;
 }
 
 .card {
@@ -228,4 +234,46 @@ div [lazy='loaded'] {
 
 .plot-container.plotly {
   @apply rounded-xl overflow-clip;
+}
+
+.js-plotly-plot {
+  @apply my-4;
+}
+
+.indicator {
+  position: absolute !important;
+  left: 0;
+  right: 0;
+  margin: auto;
+  bottom: 50px;
+  width: 40px;
+  height: 60px;
+  border: 2px solid #ccc;
+  border-radius: 50px;
+  position: relative;
+}
+
+.indicator:before {
+  content: '';
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background: #ccc;
+  margin: auto;
+  left: 0;
+  right: 0;
+  top: 30px;
+  border-radius: 50%;
+  animation: animate 1s linear infinite;
+}
+@keyframes animate {
+  0% {
+    opacity: 1;
+    top: 10%;
+  }
+  100% {
+    opacity: 0;
+    top: 40%;
+    transform: scale(0.8);
+  }
 }

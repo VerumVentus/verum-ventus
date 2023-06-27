@@ -13,10 +13,9 @@
   />
   <p>
     The strongest correlations in this graph are of that between
-    <code>likes and retweets</code>, and between
-    <code>replies and quote tweets</code>. It means it is highly likely that a
-    tweet with more likes also has more retweets, and tweets with more replies
-    also have more quote tweets.
+    <b>likes and retweets</b>, and between <b>replies and quote tweets</b>. It
+    means it is highly likely that a tweet with more likes also has more
+    retweets, and tweets with more replies also have more quote tweets.
   </p>
 </template>
 

@@ -14,7 +14,7 @@ const lorem = ref(
 
 <template>
   <a
-    class="group block max-w-sm hover:bg-gradient-to-b from-[#8f3ced] to-[#c82881] p-[4px] bg-[#21272a] shadow ease-in-out transition-all duration-500 hover:-translate-y-2"
+    class="group block xl:max-w-sm max-w-[18rem] hover:bg-gradient-to-b from-[#8f3ced] to-[#c82881] p-[4px] bg-[#21272a] shadow ease-in-out transition-all duration-500 hover:-translate-y-2"
   >
     <div class="text-left bg-[#121619] h-full overflow-hidden">
       <img
