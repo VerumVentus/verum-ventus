@@ -3,10 +3,10 @@ const settings = {
   paper_bgcolor: '#202229',
   font: {
     color: '#cccccc',
-    family: 'Karma',
+    family: 'Biryani',
   },
   titlefont: {
-    family: 'Karma',
+    family: 'Amethysta',
     size: 20,
     color: '#ffffff',
   },

@@ -2,29 +2,83 @@
   <div class="article-wrapper">
     <Navbar class="relative block invisible" />
     <h1>Results</h1>
-    <h3>Statistical Analysis</h3>
+    <h2>Statistical Analysis</h2>
     <p>
-      Based on our statistical analysis using Linear Regression where we
-      obtained a p-value of <code>2.90e-08</code>, we reject the null hypothesis
-      reject the null hypothesis that the trend remains constant. Instead, we
-      find evidence supporting the alternative hypothesis that
-      <span class="highlighted">
-        the trend of red-tagging of activists in Twitter increased
-      </span>
-      during the course of the Duterte administration.
+      To test our hypothesis that the red-tagging of activists increased with
+      time in the course of the Duterte administration,
+      <code> we performed linear regression </code> to determine if a
+      correlation exists between the frequency of tweets and time.
     </p>
-
+    <p>
+      This model is appropriate for a time series analysis since both its
+      predictor and outcome variables are quantitative. If there were multiple
+      predictor variables or if the predictor variable was a categorical value,
+      then the model would be a multiple regression or a logistic regression
+      instead.
+    </p>
+    <p>
+      The resulting linear regression is a steadily increasing graph, with a
+      root mean squared error (RMSE) of 26.53, a coefficient of determination
+      (R^2) of 0.33, and a <code>p-value of 2.896 x 10^-8</code> which is less
+      than 0.05. This means that our graph partially predicts the outcome, and
+      that we can reject the null hypothesis.
+    </p>
+    <p>
+      We therefore conclude that there is indeed a positive correlation between
+      tweet frequency and time, and that
+      <span class="highlighted">
+        the red-tagging of activists increased over time under the Duterte
+        administration </span
+      >.
+    </p>
     <v-plotly
       :key="`yearlyTweetCountData`"
       :data="modelingData"
       :layout="modelingLayout"
       :config="config"
     />
-    <h3>Data Modeling</h3>
+    <h2>Computational Modeling</h2>
     <p>
-      In our second modeling approach, we applied peak detection technique to
-      identify spikes in the frequency of a red-tagging within our dataset. We
-      then correlated these peaks with real-life events. Here's what we found:
+      To model our time series data, we used an event detection model,
+      specifically peak detection. This allows us to identify spikes in our time
+      series data that could be correlated with important events. Furthermore,
+      there are parameters in peak detection that can be modified to achieve a
+      certain result.
+    </p>
+    <p>
+      A height of 24 is used. Since 24 is approximately the average number of
+      tweets per month, this ensures that peaks detected must have a height of
+      at least our mean value. A width of 1 means that a peak must have at least
+      a width of 1 month. A threshold of 1 means that the height difference
+      between a peak and its surrounding data points must be at least 1. A
+      distance of 1 means that the time difference between a peak and its
+      surrounding data points must be at least 1 month. A prominence of 1 means
+      that the height difference between a peak and its baseline must be at
+      least 1.
+    </p>
+    <p>
+      With all these parameters, the model identified six peaks. Upon inspection
+      of these peaks, these correlated with the following historical events:
+    </p>
+
+    <Timeline />
+
+    <p>
+      These peaks all correlate with politically charged events since the start
+      of the lockdown. They were mostly instances where public outcry of
+      activists and the people against the government increased, and therefore a
+      big number of accounts pushed back against this criticism using
+      counternarratives of red-tagging. One of them, particularly the national
+      elections, was an instance where narratives of red-tagging took the lead
+      instead of being primarily a reaction to already existing public outcry.
+    </p>
+    <h2>Conclusion</h2>
+    <p>
+      Given this, we can conclude that our statistical hypothesis testing and
+      computational modeling were successful. Through these tests, not only was
+      the null hypothesis rejected, but a clear correlation was established with
+      significant historical events in Philippine history that involve the
+      red-tagging of activists under the Duterte administration.
     </p>
   </div>
 </template>
@@ -33,6 +87,7 @@
 import Navbar from '@/components/Navbar.vue';
 import { ref } from 'vue';
 import settings from '@/utils/plotly';
+import Timeline from '@/components/Timeline.vue';
 
 const x = [
   '2016-03',

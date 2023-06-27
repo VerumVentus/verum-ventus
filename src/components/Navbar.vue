@@ -15,7 +15,7 @@
       <router-link to="/">
         <Logo />
       </router-link>
-      <div class="flex gap-8 uppercase">
+      <div class="lg:flex hidden gap-8 uppercase">
         <router-link to="/" :class="currentRoute === '/' ? 'active-route' : ''">
           Overview
         </router-link>
@@ -43,6 +43,9 @@
         >
           Team
         </router-link>
+      </div>
+      <div class="lg:hidden">
+        <v-icon name="hi-view-grid" />
       </div>
     </nav>
   </div>

@@ -81,15 +81,11 @@ for (var i = 0; i < yValues.length; i++) {
       y: yValues[i],
       text: zValues[i][j],
       font: {
-        family: 'Arial',
+        family: 'Biryani',
         size: 20,
-        weight: 'bold',
-        color: 'rgb(50, 171, 96)',
-      },
-      showarrow: false,
-      font: {
         color: textColor,
       },
+      showarrow: false,
     };
     engagementHeatmapLayout.value.annotations.push(result);
   }

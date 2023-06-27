@@ -68,7 +68,9 @@
 
     <div class="pb-4">
       <Box class="text-center max-w-none bg-[#16191c]">
-        <div class="w-full grid grid-cols-2 divide-x divide-base/20">
+        <div
+          class="w-full grid lg:grid-cols-2 grid-cols-1 lg:divide-x lg:divide-y-0 divide-y gap-4 divide-base/20"
+        >
           <div class="flex items-center flex-col">
             <h3>Categorical</h3>
             <div class="w-4/5">

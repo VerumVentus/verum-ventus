@@ -41,7 +41,6 @@ const formattedDate = computed(() => {
     year: 'numeric',
   });
 
-  console.log(formattedTime, formattedDate);
   return `${formattedTime} · ${formattedDate}`;
 });
 
@@ -92,7 +91,7 @@ const lorem =
                 scale="1.5"
               />
             </div>
-            <div class="break-words text-base w-[500px]">
+            <div class="break-words line-clamp-4 text-base w-full">
               <slot>{{ lorem }}</slot>
             </div>
           </div>

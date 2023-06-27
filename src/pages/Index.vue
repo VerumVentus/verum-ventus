@@ -100,7 +100,9 @@ onUnmounted(() => {
 
 onMounted(() => {
   const body = window.document.body;
-  body.style.overflowY = 'hidden';
+  if (window.innerWidth > 1280) {
+    body.style.overflowY = 'hidden';
+  }
   const anchor = document.querySelectorAll('.anchor');
   anchors.value = anchor;
   resizeObserver.observe(body);
@@ -127,14 +129,9 @@ onMounted(() => {
       />
       <div class="w-full wrapper">
         <div class="flex gap-8 h-full w-full">
-          <div class="align-top flex flex-col gap-8">
-            <h1 class="text-left">
-              Following the
-              <br />
-              Red-bricked Road
-              <br />
-              to see where
-              <br />it goes.
+          <div class="align-top flex flex-col">
+            <h1 class="text-left xl:w-1/2 lg:w-3/4">
+              Following the Red-bricked Road to see where it goes.
             </h1>
             <p class="text-3xl font-mono text-left">
               A Data-Driven Investigation into the rampant
@@ -163,11 +160,11 @@ onMounted(() => {
       <div class="bg-img bg-cover bg-[#171a1c]" id="grid" />
       <div class="wrapper flex flex-col gap-8">
         <div
-          class="flex xl:flex-row flex-col justify-between items-center gap-16"
+          class="flex xl:flex-row xl:gap-16 flex-col justify-between items-center gap-4"
         >
-          <p class="text-8xl text-left font-extrabold xl:w-min">
+          <h1 class="text-8xl text-left font-extrabold xl:w-min">
             Problem Formulation
-          </p>
+          </h1>
           <Box
             header="Background"
             icon="oi-telescope"
@@ -217,7 +214,7 @@ onMounted(() => {
       />
       <div class="w-full wrapper">
         <div class="">
-          <p class="text-8xl text-left font-extrabold">See the tweets</p>
+          <h1 class="text-8xl text-left font-extrabold">See the tweets</h1>
         </div>
         <div class="max-w-screen-xl flex flex-row gap-8">
           <Accordion />
@@ -231,7 +228,7 @@ onMounted(() => {
       />
       <div class="wrapper">
         <div class="">
-          <p class="text-8xl text-left font-extrabold">Meet our team</p>
+          <h1 class="text-8xl text-left font-extrabold">Meet our team</h1>
           <p>
             In Verum Ventus, we are a three-man team of Filipino college
             students pursuing the power of truth through data-driven research.

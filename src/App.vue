@@ -1,9 +1,9 @@
 <template>
   <main class="min-h-screen min-w-screen flex flex-col justify-between">
     <navbar class="absolute" />
-    <router-view />
-    <Footer />
+    <router-view class="flex-1" />
   </main>
+  <Footer />
 </template>
 
 <script setup>
