@@ -26,9 +26,11 @@
           We used the following keywords to search for tweets that are relevant
           to our topic:
         </p>
-        <span v-for="keyword in keywords" class="badge">
-          {{ keyword }}
-        </span>
+        <p>
+          <span v-for="keyword in keywords" class="badge">
+            {{ keyword }}
+          </span>
+        </p>
       </Box>
     </div>
     <h2>Data Scraper</h2>

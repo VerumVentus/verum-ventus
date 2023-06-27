@@ -168,7 +168,7 @@ onMounted(() => {
           <Box
             header="Background"
             icon="oi-telescope"
-            class="text-left flex-1 bg-dark"
+            class="text-left flex-1 text-base bg-dark"
           >
             Red-tagging in the Philippines has been used for decades as the
             government's approach to campaign against insurgencies since 1969.
@@ -179,21 +179,25 @@ onMounted(() => {
         </div>
         <div class="grid xl:grid-cols-4 md:grid-cols-2 grid-cols-1 gap-8">
           <Card
+            class="text-base"
             header="Research Question"
             msg="Did the Duterte Administration exacerbate the problem of red-tagging in the Philippines?"
             icon="hi-search"
           />
           <Card
+            class="text-base"
             header="Hypothesis"
             msg="Red-tagging of activists increased with time in the course of the Duterte administration"
             icon="hi-star"
           />
           <Card
+            class="text-base"
             header="Null Hypothesis"
             msg="The red-tagging of activists did not change during the course of the Duterte Administration"
             icon="hi-ban"
           />
           <Card
+            class="text-base"
             header="Action Plan"
             msg="Analyze and compare the yearly frequency of the mis/disinformation tweets that red-tag activists"
             icon="hi-terminal"
@@ -218,43 +222,6 @@ onMounted(() => {
         </div>
         <div class="max-w-screen-xl flex flex-row gap-8">
           <Accordion />
-        </div>
-      </div>
-    </div>
-    <div class="section anchor">
-      <div
-        class="bg-img bg-[#191c1e] bg-cover"
-        v-lazy:background-image="'/wave.png'"
-      />
-      <div class="wrapper">
-        <div class="">
-          <h1 class="text-8xl text-left font-extrabold">Meet our team</h1>
-          <p>
-            In Verum Ventus, we are a three-man team of Filipino college
-            students pursuing the power of truth through data-driven research.
-          </p>
-        </div>
-        <div class="w-full flex justify-center gap-8">
-          <Contact
-            name="Mutya Gulapa"
-            email="mcgulapa@up.edu.ph"
-            src="mutya.jpg"
-          />
-          <Contact
-            name="Migo Pagdanganan"
-            email="avpagdanganan@up.edu.ph"
-            src="migo.jpg"
-          >
-            cast down the mighty, lift up the lowly ✊|
-            <a href="https://twitter.com/UPIMPULSE">@UPIMPULSE</a> ✍️|
-            <a href="https://twitter.com/AghamYouth_Engg">@AghamYouth_Engg</a>
-            ⚙️
-          </Contact>
-          <Contact
-            name="Jarred Luzada"
-            email="jeluzada@up.edu.ph"
-            src="jarred.jpg"
-          />
         </div>
       </div>
     </div>

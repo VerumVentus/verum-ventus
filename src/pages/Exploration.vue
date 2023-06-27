@@ -74,17 +74,21 @@
           <div class="flex items-center flex-col">
             <h3>Categorical</h3>
             <div class="w-4/5">
-              <span v-for="field in categorical" class="badge">
-                {{ field }}
-              </span>
+              <p>
+                <span v-for="field in categorical" class="badge">
+                  {{ field }}
+                </span>
+              </p>
             </div>
           </div>
           <div class="flex items-center flex-col">
             <h3>Numerical</h3>
             <div class="w-4/5">
-              <span v-for="field in numerical" class="badge">
-                {{ field }}
-              </span>
+              <p>
+                <span v-for="field in numerical" class="badge">
+                  {{ field }}
+                </span>
+              </p>
             </div>
           </div>
         </div>
