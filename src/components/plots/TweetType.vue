@@ -1,5 +1,4 @@
 <template>
-  <h3>Tweet type vs Date posted</h3>
   <p>We look at the frequency of tweet types:</p>
 
   <div class="grid grid-cols-2 gap-4">
@@ -18,17 +17,6 @@
       :config="config"
     />
   </div>
-
-  <p>
-    Indeed, a majority are text replies. Next, we look at the tweet types versus
-    time.
-  </p>
-
-  <p>
-    While other tweet types remained relatively stagnant, the text replies
-    became the primary way mis/disinformation was spreading especially since the
-    pandemic.
-  </p>
 </template>
 
 <script setup>

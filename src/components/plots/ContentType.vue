@@ -1,6 +1,5 @@
 <template>
-  <h3>Content type vs Date posted</h3>
-  <p>We look at the frequency of tweet types:</p>
+  <p>We look at the frequency of content types:</p>
 
   <div class="grid grid-cols-2 gap-4">
     <v-plotly
@@ -18,16 +17,6 @@
       :config="config"
     />
   </div>
-
-  <p>
-    Indeed, a majority of the tweets are emotional, with Anonymous accounts
-    greatly contributing to these. Now we look at their progression over the
-    years.
-  </p>
-
-  <p>
-    Furthermore, this spike in frequency also correlates to the pandemic period.
-  </p>
 </template>
 
 <script setup>

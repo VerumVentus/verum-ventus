@@ -35,11 +35,17 @@ dependencies:
   vue3-highlightjs:
     specifier: ^1.0.5
     version: 1.0.5(vue@3.3.4)
+  vue3-marquee:
+    specifier: ^3.2.1
+    version: 3.2.1(vue@3.3.4)
   vue3-plotly:
     specifier: ^0.0.7
     version: 0.0.7(vue@3.3.4)
 
 devDependencies:
+  '@headlessui/vue':
+    specifier: ^1.7.14
+    version: 1.7.14(vue@3.3.4)
   '@jridgewell/sourcemap-codec':
     specifier: ^1.4.15
     version: 1.4.15
@@ -273,6 +279,15 @@ packages:
     os: [win32]
     requiresBuild: true
     optional: true
+
+  /@headlessui/vue@1.7.14(vue@3.3.4):
+    resolution: {integrity: sha512-aL9U9Sa7wdOzlrfjx6EjMIYNRCma5mngWcWzQBcHFwznpRZ8g/QZ/AYFtRDrZZUw22Ttttja4D7ZRXFwhONewA==}
+    engines: {node: '>=10'}
+    peerDependencies:
+      vue: ^3.2.0
+    dependencies:
+      vue: 3.3.4
+    dev: true
 
   /@jridgewell/gen-mapping@0.3.3:
     resolution: {integrity: sha512-HLhSWOLRi875zjjMG/r+Nv0oCW8umGb0BgEhyX3dDX3egwZtB8PqLnjz3yedt8R5StBrzcg4aBpnh8UA9D1BoQ==}
@@ -1512,6 +1527,15 @@ packages:
       vue: ^3.0.0
     dependencies:
       highlight.js: 10.7.3
+      vue: 3.3.4
+    dev: false
+
+  /vue3-marquee@3.2.1(vue@3.3.4):
+    resolution: {integrity: sha512-pNvmdtF06cm6AD0fKiPCuH6W80z+WB4Lpfx5Zd+jHrZovyFRRJOgXBNqXQtiBA1jQWcsHR2QQ/8Eu4OFLFgX2Q==}
+    engines: {node: '>=12'}
+    peerDependencies:
+      vue: ^3.2
+    dependencies:
       vue: 3.3.4
     dev: false
 

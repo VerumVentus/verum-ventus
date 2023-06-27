@@ -1,6 +1,6 @@
 <template>
+  <Navbar class="fixed" />
   <main class="min-h-screen min-w-screen flex flex-col justify-between">
-    <navbar class="absolute" />
     <router-view class="flex-1" />
   </main>
   <Footer />

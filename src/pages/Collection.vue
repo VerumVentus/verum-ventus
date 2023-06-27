@@ -36,25 +36,20 @@
     <h2>Data Scraper</h2>
 
     <p>
-      We have developed a Python script that automates the process of collecting
-      tweets that contain the specified keywords mentioned earlier. With these
-      scripts in place, the data collection process becomes streamlined and
-      efficient, saving valuable time and effort. By automating the collection
-      process, we can consistently retrieve relevant tweets without manual
-      intervention, ensuring a comprehensive dataset for our analysis. This
-      Python script enable us to efficiently capture a large volume of tweets
-      that are essential for training our models and conducting thorough
-      investigations into the topic at hand.
+      The following Python script collected the tweets with specified keywords,
+      streamlining the data collection process and saving time. Automating the
+      collection ensures a comprehensive dataset for analysis, enabling
+      efficient capture of a large volume of essential tweets for model training
+      and investigations.
     </p>
 
     <highlight input="../codeblocks/collection.py" />
 
     <h2>Criteria</h2>
     <p>
-      In order to achieve accurate modeling and produce reliable results, the
-      selection of tweets for our dataset is guided by the following criteria.
-      These criteria play a crucial role in ensuring the high quality of the
-      data used in our machine learning process:
+      In order to ensure high quality data, achieve accurate modeling, and
+      produce reliable results, the selection of tweets for our dataset is
+      guided by the following criteria:
     </p>
     <div class="grid grid-rows-3 gap-8">
       <Card
@@ -65,11 +60,6 @@
         :icon="criterion.icon"
       />
     </div>
-    <p>
-      The scope of our analysis is tweets with mis/disinformation containing the
-      above keywords from <b>2016 to 2022</b> (the period of Duterte’s
-      presidency).
-    </p>
     <p>The following factors were also taken into consideration:</p>
     <div class="grid grid-cols-2 gap-8">
       <Card
@@ -113,7 +103,7 @@ const criteria = [
   {
     header: 'Quality',
     content:
-      'We place great emphasis on the quality of the tweets we include. This involves filtering out low-quality or irrelevant content, such as spam or unrelated discussions. By maintaining a high standard of quality, we ensure that our dataset consists of meaningful and informative tweets.',
+      'We place great emphasis on the quality of the tweets we include. This involves filtering out irrelevant content, such as spam or unrelated discussions. By maintaining a high standard of quality, we ensure that our dataset consists of meaningful tweets.',
     icon: 'hi-badge-check',
   },
   {
@@ -121,6 +111,12 @@ const criteria = [
     content:
       'The timeliness of the data is vital, particularly when studying dynamic phenomena such as misinformation. We prioritize recent tweets to ensure that our dataset reflects the most up-to-date trends and patterns, allowing us to draw accurate conclusions based on current information.',
     icon: 'hi-newspaper',
+  },
+  {
+    header: 'Scope',
+    content:
+      'The scope of our analysis is tweets with mis/disinformation containing the above keywords from January 2016 to December 2022 (the period of Duterte’s presidency).',
+    icon: 'hi-calendar',
   },
 ];
 

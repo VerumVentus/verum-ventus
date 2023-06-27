@@ -48,8 +48,8 @@
         <div class="dot" />
         <div class="w-0 flex-1 border-l-1 border-l border-l-secondary">
           <div class="event-description">
-            Death of Chad Booc, a Lumad teacher & indigenous peoples' rights
-            activist.
+            Death of New Bataan 5 including Chad Booc, a Lumad teacher &
+            indigenous peoples' rights activist.
           </div>
         </div>
       </div>

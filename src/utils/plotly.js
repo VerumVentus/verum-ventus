@@ -6,7 +6,7 @@ const settings = {
     family: 'Biryani',
   },
   titlefont: {
-    family: 'Amethysta',
+    family: 'Domine',
     size: 20,
     color: '#ffffff',
   },

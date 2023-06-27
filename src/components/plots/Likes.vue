@@ -46,8 +46,8 @@
     />
   </div>
   <p>
-    A total of 8 rows were removed in the process of dropping the outliers
-    from144 rows the Likes field. The dataset now has <b>144 rows</b>.
+    A total of 8 rows were removed in the process of dropping the outliers from
+    the Likes field. The dataset now has <b>144 rows</b>.
   </p>
 </template>
 

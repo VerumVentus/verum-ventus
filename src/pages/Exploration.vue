@@ -3,28 +3,24 @@
     <Navbar class="relative block invisible" />
     <h1>Data Exploration</h1>
     <h2>Let's now explore the data.</h2>
-    <p>
-      Our data exploration process has 4 steps:
-      <span class="highlighted">Data understanding</span> where we download our
-      data and get an initial overview of it.
-      <span class="highlighted">Data preparation</span> where our data is
-      filtered, fixed, and narrowed down so it is ready for analysis.
+    <p>Our data exploration process has 4 steps:</p>
 
-      <span class="highlighted">Feature understanding</span> where individual
-      fields of our data are analyzed separately. This is also called univariate
-      analysis.
-
-      <span class="highlighted">Feature relationships</span> where we analyze
-      how different fields of data interact. This is where we will also do
-      time-series analysis.
-    </p>
+    <div class="grid grid-cols-2 gap-8">
+      <Card
+        class="max-w-none text-center"
+        v-for="step in steps"
+        :header="step.name"
+        :msg="step.description"
+        :icon="step.icon"
+      />
+    </div>
     <h2>Data Understanding</h2>
     <h3>Getting the initial observations from the dataset</h3>
     <p>
-      In our project, data understanding is the process of getting to know our
-      dataset on misinformation. By analyzing and exploring the data, we aim to
-      understand its patterns, quality, and structure. This understanding helps
-      us make informed decisions about how to process and analyze the data
+      In our project, data understanding is the process of getting to know the
+      inital state of our dataset. By analyzing and exploring the data, we aim
+      to understand its patterns, quality, and structure. This understanding
+      helps us make informed decisions about how to process and analyze the data
       effectively. It sets the foundation for achieving our project goals and
       extracting valuable insights from the dataset.
     </p>
@@ -34,12 +30,33 @@
         152 entries of data across 33 fields of data.
       </span>
     </p>
-    <p>
-      Among these 33 fields of data, there were
-      <b>4 that had float (or decimal) data types, </b>
-      <b>7 that had integer data types</b>, and
-      <b>22 that were object (or categorical) data types</b>.
-    </p>
+    <p>Among these 33 fields of data, there were:</p>
+    <div class="pb-4">
+      <Box class="text-center max-w-none bg-[#16191c]">
+        <div
+          class="w-full grid lg:grid-cols-3 grid-cols-1 lg:divide-x divide-white/10 lg:divide-y-0 divide-y gap-4 divide-base/20"
+        >
+          <div class="flex items-center flex-col">
+            <h3>Float</h3>
+            <div class="w-4/5">
+              <p>4 Fields</p>
+            </div>
+          </div>
+          <div class="flex items-center flex-col">
+            <h3>Integer</h3>
+            <div class="w-4/5">
+              <p>7 Fields</p>
+            </div>
+          </div>
+          <div class="flex items-center flex-col">
+            <h3>Categorical</h3>
+            <div class="w-4/5">
+              <p>22 Fields</p>
+            </div>
+          </div>
+        </div>
+      </Box>
+    </div>
     <p>This initial understanding allows us to further prepare our data.</p>
     <highlight
       input="../codeblocks/exploration-0.py"
@@ -47,9 +64,13 @@
     />
 
     <h2>Data Preparation</h2>
+    <p>
+      This step makes sure that the dataset contains data which are relevant,
+      complete, unique, valid and accurate.
+    </p>
     <h3>Removing columns irrelevant to the topic.</h3>
     <p>
-      This study is a <span class="highlighted">time analysis</span> on
+      This study is a <span class="highlighted">time series analysis</span> on
       <b>
         how the Duterte Administration affected the red-tagging of activists in
         the Philippines
@@ -64,12 +85,15 @@
       input="../codeblocks/exploration-1.py"
       output="../codeblocks/exploration-1.out"
     />
-    <p>The following fields were kept since they were relevant for analysis.</p>
+    <p>
+      A total of 22 fields were kept as shown below since they were relevant for
+      analysis.
+    </p>
 
     <div class="pb-4">
       <Box class="text-center max-w-none bg-[#16191c]">
         <div
-          class="w-full grid lg:grid-cols-2 grid-cols-1 lg:divide-x lg:divide-y-0 divide-y gap-4 divide-base/20"
+          class="w-full grid lg:grid-cols-2 grid-cols-1 lg:divide-x divide-white/10 lg:divide-y-0 divide-y gap-4 divide-base/20"
         >
           <div class="flex items-center flex-col">
             <h3>Categorical</h3>
@@ -94,7 +118,6 @@
         </div>
       </Box>
     </div>
-    <p>The fields in our data are now relevant. ✅</p>
 
     <h3>Exploring which columns have NULL values.</h3>
     <p>
@@ -130,7 +153,6 @@
       input="../codeblocks/exploration-2.py"
       output="../codeblocks/exploration-22.out"
     />
-    <p>Our data is complete. ✅</p>
 
     <h3>Checking for Uniqueness.</h3>
 
@@ -150,7 +172,6 @@
       Other fields are categorical, like Account type, Tweet type, Content type,
       and Satire vs Non-satire.
     </p>
-    <p>We can move on to the next factor. ✅</p>
 
     <h3>Checking for Validity.</h3>
     <p>
@@ -170,7 +191,6 @@
       Categorical fields were converted to data type <code>category</code>, such
       as Account type, Content type, Tweet type, and Satire vs Non-satire.
     </p>
-    <p>Our data is now valid and in the correct format. ✅</p>
 
     <h3>Checking for Accuracy.</h3>
     <p>
@@ -186,9 +206,7 @@
       Further, the field was renamed to "Satire" with boolean instead of
       categorical entries.
     </p>
-    <p>
-      We can move on to the next section. Our data is ready for analysis. ✅
-    </p>
+
     <p>An example data entry is as follows:</p>
     <Embed gist-id="7dcc08b4f67edee9334390f280849097" file="data.csv" />
 
@@ -244,9 +262,23 @@
 
     <Yearly />
 
+    <h3>Trends of Account Type, Tweet Type and Content Type</h3>
+
     <TweetType />
 
     <ContentType />
+
+    <p>
+      The majority of tweets fall into
+      <b> emotional content, text-reply, and anonymous user categories. </b>
+      These suggest that tweets aimed at activists from 2016 to 2022 were spread
+      on Twitter through emotional reactionary replies from anonymous users.
+    </p>
+
+    <p>
+      This observation can be a good place to start for future researchers who
+      intend to investigate on troll farms in the Philippines.
+    </p>
 
     <Posted />
 
@@ -288,6 +320,7 @@ import TweetType from '@/components/plots/TweetType.vue';
 import ContentType from '@/components/plots/ContentType.vue';
 import Posted from '@/components/plots/Posted.vue';
 import Engagement from './Engagement.vue';
+import Card from '@/components/Card.vue';
 
 const categorical = [
   'ID',
@@ -316,24 +349,30 @@ const numerical = [
   'Quote Tweets',
 ];
 
-const criteria = [
+const steps = [
   {
-    header: 'Relevance',
-    content:
-      'We prioritize selecting tweets that are directly related to our research topic. This ensures that the data we include in our dataset aligns closely with the focus of our project, allowing us to capture the key elements and nuances of the subject matter.',
-    icon: 'hi-presentation-chart-line',
+    icon: 'hi-bookmark-alt',
+    name: 'Data Understanding',
+    description:
+      'Download the data and get an initial overview of it. This is where the data scraper was used.',
   },
   {
-    header: 'Quality',
-    content:
-      'We place great emphasis on the quality of the tweets we include. This involves filtering out low-quality or irrelevant content, such as spam, advertisements, or unrelated discussions. By maintaining a high standard of quality, we ensure that our dataset consists of meaningful and informative tweets.',
-    icon: 'hi-badge-check',
+    icon: 'hi-filter',
+    name: 'Data preparation',
+    description:
+      'Data is filtered, fixed, and narrowed down so it is ready for analysis',
   },
   {
-    header: 'Freshness',
-    content:
-      'The timeliness of the data is vital, particularly when studying dynamic phenomena such as misinformation. We prioritize recent tweets to ensure that our dataset reflects the most up-to-date trends and patterns, allowing us to draw accurate conclusions based on current information.',
-    icon: 'hi-globe',
+    icon: 'hi-light-bulb',
+    name: 'Feature understanding',
+    description:
+      'Individual fields of the data are analyzed separately. This is also called univariate analysis.',
+  },
+  {
+    icon: 'hi-chat-alt-2',
+    name: 'Feature relationships',
+    description:
+      'Analyze how different fields of data interact. This is where we will also do time-series analysis.',
   },
 ];
 </script>

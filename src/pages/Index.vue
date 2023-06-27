@@ -1,13 +1,11 @@
 <script setup>
-import { ref, watch } from 'vue';
+import { ref } from 'vue';
 import Box from '../components/Box.vue';
 import Card from '../components/Card.vue';
-import Contact from '../components/Contact.vue';
 import Accordion from '../components/Accordion.vue';
+import Marquee from '../components/Marquee.vue';
 import { onMounted } from 'vue';
 import { onUnmounted } from 'vue';
-
-// add an event listener for #app that scrolls the page to the next section when the user scrolls down and previous section when the user scrolls up
 
 const anchors = ref(null);
 
@@ -81,12 +79,15 @@ const arrow = async (e) => {
 
 const resizeObserver = new ResizeObserver((entries) => {
   const body = window.document.body;
+  const app = document.getElementById('app');
   if (entries[0].contentRect.width > 1280) {
     body.addEventListener('wheel', scroll, { passive: false });
     body.addEventListener('keydown', arrow, { passive: false });
+    app.style.overflowY = 'hidden';
   } else {
     body.removeEventListener('wheel', scroll), { passive: false };
     body.removeEventListener('keydown', arrow, { passive: false });
+    app.style.overflowY = 'auto';
   }
 });
 
@@ -111,7 +112,7 @@ onMounted(() => {
 
 <template>
   <div
-    class="absolute left-16 top-0 bottom-0 m-auto h-fit flex flex-col gap-4 z-50"
+    class="fixed left-16 top-0 bottom-0 m-auto h-fit flex flex-col gap-4 z-50"
   >
     <div
       v-for="(anchor, index) in anchors"
@@ -206,6 +207,31 @@ onMounted(() => {
       </div>
       <div
         class="h-1/4 w-full absolute -z-[1] bottom-0 bg-gradient-to-t from-[#171a1c]"
+      />
+    </div>
+    <div class="section anchor">
+      <div
+        class="w-full h-full absolute z-[-2] top-0 bg-cover grayscale-[80%] opacity-80 brightness-[30%] contrast-[110%]"
+        v-lazy:background-image="
+          `https://foreignpolicy.com/wp-content/uploads/2019/06/GettyImages-936706736.jpg?w=1537`
+        "
+      ></div>
+      <div
+        class="h-1/2 w-full absolute -z-[1] top-0 bg-gradient-to-b from-[#171a1c]"
+      />
+      <div class="wrapper flex flex-col gap-8 h-screen py-20">
+        <h1>Duterte Turns Death Squads on Political Activists</h1>
+      </div>
+      <div class="absolute h-[200px] transform translate-y-20">
+        <Marquee :key="1" class="-rotate-3 -translate-y-16" />
+        <Marquee
+          :key="2"
+          class="rotate-[4deg] translate-y-4"
+          :direction="'reverse'"
+        />
+      </div>
+      <div
+        class="h-1/2 w-full absolute -z-[1] bottom-0 bg-gradient-to-t from-[#171a1c]"
       />
     </div>
     <div class="section anchor">

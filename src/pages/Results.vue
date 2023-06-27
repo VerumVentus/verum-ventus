@@ -66,11 +66,12 @@
     <p>
       These peaks all correlate with politically charged events since the start
       of the lockdown. They were mostly instances where public outcry of
-      activists and the people against the government increased, and therefore a
-      big number of accounts pushed back against this criticism using
-      counternarratives of red-tagging. One of them, particularly the national
-      elections, was an instance where narratives of red-tagging took the lead
-      instead of being primarily a reaction to already existing public outcry.
+      activists and the people's criticism on the government increased, and
+      therefore a big number of accounts pushed back against this criticism
+      using counternarratives of red-tagging. One of them, particularly the
+      national elections, was an instance where narratives of red-tagging took
+      the lead instead of being primarily a reaction to already existing public
+      outcry.
     </p>
     <h2>Conclusion</h2>
     <p>

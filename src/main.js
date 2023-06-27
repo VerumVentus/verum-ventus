@@ -1,4 +1,5 @@
 import { createApp } from 'vue';
+import 'vue3-marquee/dist/style.css';
 import './style.css';
 import router from './router';
 import App from './App.vue';
@@ -7,6 +8,7 @@ import VueClickAway from 'vue3-click-away';
 import VueLazyload from 'vue-lazyload';
 import VueHighlightJS from 'vue3-highlightjs';
 import { VuePlotly } from 'vue3-plotly';
+import Vue3Marquee from 'vue3-marquee';
 
 import { OhVueIcon, addIcons } from 'oh-vue-icons';
 import * as HiIcons from 'oh-vue-icons/icons/hi';
@@ -24,6 +26,7 @@ const app = createApp(App);
 app.use(router);
 app.component('v-plotly', VuePlotly);
 app.component('v-icon', OhVueIcon);
+app.use(Vue3Marquee);
 app.use(VueClickAway);
 app.use(VueLazyload);
 app.use(VueHighlightJS);

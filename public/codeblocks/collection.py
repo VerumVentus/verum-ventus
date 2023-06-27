@@ -14,11 +14,11 @@ maxTweets = 500
 
 # Creating list to append tweet data to
 tweets_list2 = []
-category = 'REDT'
-group = '00'
-collector = 'John Wick'
-topic = 'Redtagging of rallyists'
-keywords = 'rally ng rally since:2016-01-01 until:2023-03-17'
+category = "REDT"
+group = "00"
+collector = "John Wick"
+topic = "Redtagging of rallyists"
+keywords = "rally ng rally since:2016-01-01 until:2022-12-31"
 
 # Using TwitterSearchScraper to scrape data and append tweets to list
 for i, tweet in enumerate(sntwitter.TwitterSearchScraper(keywords).get_items()):
@@ -26,34 +26,36 @@ for i, tweet in enumerate(sntwitter.TwitterSearchScraper(keywords).get_items()):
         break
 
     now = datetime.now()
-    tweets_list2.append([
-        now,
-        tweet,
-        group,
-        collector,
-        category,
-        topic,
-        keywords,
-        f"@{tweet.user.username}",
-        tweet.user.displayname,
-        tweet.user.rawDescription,
-        tweet.user.verified,
-        tweet.user.created,
-        tweet.user.friendsCount,
-        tweet.user.followersCount,
-        tweet.user.location,
-        tweet.rawContent,
-        '',
-        'text',
-        tweet.date,
-        '',
-        '',
-        tweet.user.favouritesCount,
-        tweet.replyCount,
-        tweet.retweetCount,
-        tweet.quoteCount,
-        tweet.viewCount
-    ])
+    tweets_list2.append(
+        [
+            now,
+            tweet,
+            group,
+            collector,
+            category,
+            topic,
+            keywords,
+            f"@{tweet.user.username}",
+            tweet.user.displayname,
+            tweet.user.rawDescription,
+            tweet.user.verified,
+            tweet.user.created,
+            tweet.user.friendsCount,
+            tweet.user.followersCount,
+            tweet.user.location,
+            tweet.rawContent,
+            "",
+            "text",
+            tweet.date,
+            "",
+            "",
+            tweet.user.favouritesCount,
+            tweet.replyCount,
+            tweet.retweetCount,
+            tweet.quoteCount,
+            tweet.viewCount,
+        ]
+    )
 
 # Creating a dataframe from the tweets list above
 tweets_df2 = pd.DataFrame(
@@ -84,11 +86,12 @@ tweets_df2 = pd.DataFrame(
         "Replies",
         "Retweets",
         "Quote Tweets",
-        "Views"
-    ])
+        "Views",
+    ],
+)
 
 # Display first 5 entries from dataframe
 tweets_df2.head()
 
 # Export dataframe into a CSV
-tweets_df2.to_csv('text-query-tweets.csv', sep=',', index=False)
+tweets_df2.to_csv("text-query-tweets.csv", sep=",", index=False)

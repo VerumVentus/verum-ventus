@@ -1,5 +1,5 @@
 <template>
-  <h3>Date posted vs Date joined</h3>
+  <h3>Date Posted vs Date Joined</h3>
   <p>
     We look at the relationship between the posting of a tweet and the account
     creation of the user tweeting it.
@@ -13,8 +13,21 @@
   />
   <p>
     While there is great variation, notice that there is an increasing density
-    towards the upper right of the graph, signifying that there is a correlation
-    between recently made accounts and recently made posted tweets.
+    towards the upper right of the graph.
+  </p>
+  <p>
+    This suggests that
+    <b>
+      many of the recent tweets targetting activists on Twitter were posted by
+      newly made accounts,
+    </b>
+    a behavior which can be associated with the recent rise of troll farms in
+    the country.
+  </p>
+
+  <p>
+    This observation can also be a good place to start for future researchers
+    who intend to further investigate on troll farms in the Philippines.
   </p>
 </template>
 

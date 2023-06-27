@@ -136,19 +136,19 @@ const yearlyLayout = {
 };
 
 const year2019Layout = ref({
-  title: 'Amount of tweets posted in 2019',
+  title: 'Number of Tweets Posted Monthly in 2019',
   ...yearlyLayout,
 });
 const year2020Layout = ref({
-  title: 'Amount of tweets posted in 2020',
+  title: 'Number of Tweets Posted Monthly in 2020',
   ...yearlyLayout,
 });
 const year2021Layout = ref({
-  title: 'Amount of tweets posted in 2021',
+  title: 'Number of Tweets Posted Monthly in 2021',
   ...yearlyLayout,
 });
 const year2022Layout = ref({
-  title: 'Amount of tweets posted in 2022',
+  title: 'Number of Tweets Posted Monthly in 2022',
   ...yearlyLayout,
 });
 
