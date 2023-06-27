@@ -128,5 +128,6 @@ html {
 
 <script setup>
 import Navbar from '@/components/Navbar.vue';
+import Timeline from '@/components/Timeline.vue';
 import Modeling from '@/components/plots/Modeling.vue';
 </script>
