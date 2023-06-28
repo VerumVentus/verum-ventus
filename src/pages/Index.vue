@@ -128,7 +128,7 @@ onMounted(() => {
       <div class="w-full wrapper">
         <div class="flex gap-8 h-full w-full">
           <div class="align-top flex flex-col">
-            <h1 class="text-left capitalize xl:w-1/2 lg:w-3/4">
+            <h1 class="text-left mb-4 capitalize xl:w-1/2 lg:w-3/4">
               Following the Red-bricked Road to see where it goes.
             </h1>
             <p class="text-3xl text-left">
@@ -139,7 +139,11 @@ onMounted(() => {
           </div>
         </div>
       </div>
-      <div class="indicator"></div>
+      <div class="indicator xl:visible invisible flex justify-center">
+        <div class="absolute w-max top-full transform translate-y-1/2 text-xs">
+          SCROLL DOWN
+        </div>
+      </div>
     </div>
 
     <div class="section anchor">
@@ -269,7 +273,7 @@ onMounted(() => {
           <Card
             class="text-base"
             header="Collection"
-            msg="SNScrape was used as a tweet scraper to collect at least 150 tweets from years 2016 to 2022 containing specific keywords relevant to the topic. Meanwhile, at least 1600 pre-processed tweets from other REDT groups were included in the data modeling."
+            msg="SNScrape was used as a tweet scraper to collect at least 150 tweets from years 2016 to 2022 containing specific keywords relevant to the topic. "
             icon="bi-twitter"
           />
           <Card

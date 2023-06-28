@@ -4,8 +4,8 @@
     <h1>What Now?</h1>
     <h2>Summary</h2>
     <p>
-      Critiquing the government and advocating for action is afundamental
-      democratic right
+      Critiquing the government and advocating for action is a fundamental
+      democratic right.
     </p>
 
     <Image :src="`/activists.png`" :source="`Carlo Manalansan (Bulatlat)`" />
@@ -47,9 +47,10 @@
       >
         a significant number of these victims have been specifically targeted
         through red-tagging as individuals or as part of red-tagged
-        organizations </a
-      >.These figures highlight the urgency of addressing this issue to
-      safeguard the rights and safety of all Filipino citizens.
+        organizations.</a
+      >
+      These figures highlight the urgency of addressing this issue to safeguard
+      the rights and safety of all Filipino citizens.
     </p>
 
     <h3>
@@ -58,9 +59,10 @@
     </h3>
 
     <p>
-      This was shown by the increasing trend of the number of tweets from 2016
-      to 2022 with peaks that correlate with political events that trigger
-      criticism of the administration.
+      This was shown by the
+      <b> increasing trend of the number of tweets from 2016 to 2022 </b> with
+      peaks that correlate with
+      <b> political events that trigger criticism of the administration </b>.
     </p>
 
     <Modeling />
@@ -86,8 +88,8 @@
       >
         The investigation into the dissemination of fake news by paid "trolls"
         reveals their utilization of anonymous accounts, multiple SIM cards, and
-        adherence to daily posting quotas </a
-      >.
+        adherence to daily posting quotas.</a
+      >
     </p>
 
     <Image
@@ -111,7 +113,7 @@
       <h2 class="my-4 text-light">Bottomline</h2>
 
       <p>
-        Our findings suggest theurgency of taking immediate action to counter
+        Our findings suggest the urgency of taking immediate action to counter
         red-tagging in order to protect our democratic rights. Addressing the
         root causes of red-tagging, holding the responsible parties accountable,
         and investing in technological tools and strategies to combat
