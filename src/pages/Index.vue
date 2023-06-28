@@ -109,7 +109,7 @@ onMounted(() => {
 
 <template>
   <div
-    class="fixed left-16 top-0 bottom-0 m-auto h-fit flex flex-col gap-4 z-50"
+    class="fixed lg:hidden left-16 top-0 bottom-0 m-auto h-fit flex flex-col gap-4 z-50"
   >
     <div
       v-for="(anchor, index) in anchors"
@@ -294,14 +294,6 @@ onMounted(() => {
       </div>
       <div
         class="h-1/4 w-full absolute -z-[1] bottom-0 bg-gradient-to-t from-[#171a1c]"
-      />
-    </div>
-    <div class="xl:hidden transform flex flex-col -space-y-20">
-      <Marquee :key="1" class="-rotate-3 -translate-y-16" />
-      <Marquee
-        :key="2"
-        class="rotate-[4deg] translate-y-4"
-        :direction="'reverse'"
       />
     </div>
     <div class="section anchor">

@@ -71,7 +71,7 @@
       />
     </div>
 
-    <router-link to="/results" class="flex items-center gap-4 mt-8 group">
+    <router-link to="/exploration" class="flex items-center gap-4 mt-8 group">
       <p>
         <span class="highlighted group-hover:text-primary"
           >Next chapter: Exploring the Data</span
