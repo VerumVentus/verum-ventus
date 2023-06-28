@@ -1,6 +1,6 @@
 <template>
   <div class="wrapper">
-    <div class="flex gap-8 justify-between">
+    <div class="flex gap-8 justify-center">
       <div class="article-wrapper">
         <Navbar class="relative block invisible" />
         <h1>Data Collection</h1>

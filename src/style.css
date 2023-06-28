@@ -58,16 +58,16 @@ body {
 }
 
 .wrapper {
-  @apply mx-auto container w-screen text-left px-4;
+  @apply mx-auto container w-screen text-left;
 }
 
 .article-wrapper {
-  @apply mx-auto relative container w-screen lg:max-w-screen-md text-left;
+  @apply xl:mx-0 mx-auto px-0 relative container w-screen lg:max-w-screen-md text-left;
 }
 
 h1 {
   font-family: 'Alegreya';
-  @apply md:my-12 my-6  font-extrabold leading-none tracking-tight md:text-8xl text-4xl;
+  @apply md:my-8 md:mt-4 my-6 font-extrabold leading-none tracking-tight md:text-8xl text-6xl;
 }
 
 h2 {

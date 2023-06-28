@@ -1,6 +1,6 @@
 <template>
   <div class="wrapper">
-    <div class="flex gap-8 justify-between">
+    <div class="flex gap-8 justify-center">
       <div class="article-wrapper">
         <Navbar class="relative block invisible" />
         <h1>Data Exploration</h1>
@@ -225,6 +225,7 @@
           <p>An example data entry is as follows:</p>
           <Embed gist-id="7dcc08b4f67edee9334390f280849097" file="data.csv" />
         </section>
+
         <section id="feature-understanding">
           <h2>Feature Understanding</h2>
           <h3>Measures of center</h3>
@@ -275,8 +276,10 @@
           <Followers />
 
           <Following />
+        </section>
 
-          <h3>Time-series Analysis</h3>
+        <section id="feature-relationships">
+          <h2>Feature Relationships</h2>
           <p>
             This section aims to answer whether there is a correlation among
             features of our data.

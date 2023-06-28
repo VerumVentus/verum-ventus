@@ -7,13 +7,13 @@
     <div class="wrapper">
       <Navbar class="relative block invisible" />
       <div class="">
-        <h1 class="text-8xl text-left font-extrabold">Meet our team</h1>
+        <h1>Meet our team</h1>
         <p>
-          In Verum Ventus, we are a three-man team of Filipino college students
-          pursuing the power of truth through data-driven research.
+          In Verum Ventus, we are a three-person team of Filipino college
+          students pursuing the power of truth through data-driven research.
         </p>
       </div>
-      <div class="w-full flex justify-center gap-8 my-8">
+      <div class="w-full flex justify-center gap-8 xl:my-16 my-8">
         <Contact name="Mutya Gulapa" email="mcgulapa@up.edu.ph" src="mutya.jpg">
           23-year-old grandma 👵 So many hobbies ☘📚🎨🎶🧶📷 So little time ⏳😿
         </Contact>
@@ -35,6 +35,8 @@
           ako lang ang may frontend masters vibes sa klase namin dito 🤓
         </Contact>
       </div>
+
+      <h2>Acknowledgements</h2>
 
       <p>
         The team would like to thank the following groups whose datasets were

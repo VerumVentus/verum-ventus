@@ -128,7 +128,7 @@ onMounted(() => {
       <div class="w-full wrapper">
         <div class="flex gap-8 h-full w-full">
           <div class="align-top flex flex-col">
-            <h1 class="text-left mb-4 capitalize xl:w-1/2 lg:w-3/4">
+            <h1 class="text-left mb-4 capitalize xl:w-4/6 lg:w-full">
               Following the Red-bricked Road to see where it goes.
             </h1>
             <p class="text-3xl text-left">

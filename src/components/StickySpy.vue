@@ -1,5 +1,6 @@
 <template>
   <nav class="section-nav h-fit w-full max-w-sm xl:block hidden">
+    <div class="progress-bar" />
     <ol class="bullet-list">
       <li v-for="link in links">
         <a :href="link.target">{{ link.name }}</a>
@@ -34,6 +35,20 @@ onMounted(() => {
       target: `#${section.getAttribute('id')}`,
     })
   );
+
+  // add scroll listener to window document and
+  // on scroll, set section-nav::after height to scroll position percentage
+  const sectionNav = document.querySelector('.progress-bar');
+
+  window.addEventListener('scroll', () => {
+    const scrollPercentage =
+      (document.documentElement.scrollTop /
+        (document.documentElement.scrollHeight -
+          document.documentElement.clientHeight)) *
+      100;
+
+    sectionNav.style.height = `${scrollPercentage}%`;
+  });
 });
 
 onUnmounted(() => {
@@ -60,11 +75,16 @@ function onElementObserved(entries) {
 /* Sidebar Navigation */
 .section-nav {
   position: sticky;
-  top: 150px;
+  top: 120px;
   right: 0;
   margin-top: 2rem;
   padding-left: 0;
   @apply border-l border-light/10;
+}
+
+.progress-bar {
+  box-sizing: border-box;
+  @apply absolute h-0 border-l-4 transform translate-x-[-2px] border-primary left-0 top-0;
 }
 
 .section-nav a {

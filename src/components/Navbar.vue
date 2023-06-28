@@ -3,7 +3,7 @@
     <Transition name="grow">
       <div
         v-if="scrolled"
-        class="h-[150%] w-full absolute -z-[1] top-0 bg-gradient-to-b from-[#101213]"
+        class="h-[120%] w-full absolute -z-[1] top-0 bg-gradient-to-b from-[#101213]"
       />
     </Transition>
     <nav class="z-50 w-full flex justify-between items-center py-8 wrapper">
