@@ -109,7 +109,7 @@ onMounted(() => {
 
 <template>
   <div
-    class="fixed lg:hidden left-16 top-0 bottom-0 m-auto h-fit flex flex-col gap-4 z-50"
+    class="fixed xl:flex hidden right-16 top-0 bottom-0 m-auto h-fit flex-col gap-4 z-50"
   >
     <div
       v-for="(anchor, index) in anchors"
