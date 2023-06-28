@@ -67,17 +67,17 @@ body {
 
 h1 {
   font-family: 'Alegreya';
-  @apply my-12 font-extrabold leading-none tracking-tight text-8xl;
+  @apply md:my-12 my-6  font-extrabold leading-none tracking-tight md:text-8xl text-4xl;
 }
 
 h2 {
   font-family: 'Domine';
-  @apply text-4xl tracking-tighter font-extrabold my-8 mt-16;
+  @apply md:text-4xl text-2xl tracking-tighter font-extrabold md:my-8 mt-10;
 }
 
 h3 {
   font-family: 'Domine';
-  @apply text-2xl tracking-tighter font-semibold  my-6 mt-12;
+  @apply md:text-2xl text-xl tracking-tighter font-semibold md:my-6 mt-8;
 }
 
 p {

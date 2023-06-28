@@ -139,7 +139,10 @@ onMounted(() => {
           </div>
         </div>
       </div>
-      <div class="indicator xl:visible invisible flex justify-center">
+      <div
+        class="indicator xl:visible invisible flex justify-center cursor-pointer"
+        @click="scrollTo(anchors[1]), (active = 1)"
+      >
         <div class="absolute w-max top-full transform translate-y-1/2 text-xs">
           SCROLL DOWN
         </div>
@@ -187,8 +190,8 @@ onMounted(() => {
     <div class="section anchor">
       <div class="bg-img bg-cover bg-[#171a1c]" id="grid" />
       <div class="wrapper flex flex-col">
-        <h1 class="text-8xl text-left font-extrabold">Introduction</h1>
-        <p>
+        <h1>Introduction</h1>
+        <p class="text-xl">
           In the Information Age,
           <b> people no longer rely solely on traditional media for news. </b>
           Instead,they seek awareness from highly popular posts on social media
@@ -196,8 +199,7 @@ onMounted(() => {
           structure of social media, makes it
           <b> challenging to distinguish truth from falsehood. </b>
         </p>
-
-        <p>
+        <p class="text-xl">
           <b>Verum Ventus</b> seeks to make the truth louder through data
           science. By employing a data-driven approach to collect misinformation
           surrounding activists during the Duterte Administration in the
@@ -219,9 +221,7 @@ onMounted(() => {
         <div
           class="flex xl:flex-row xl:gap-16 flex-col justify-between items-center gap-4"
         >
-          <h1 class="text-8xl text-left font-extrabold xl:w-min">
-            Problem Formulation
-          </h1>
+          <h1 class="xl:w-min">Problem Formulation</h1>
           <Box
             header="Background"
             icon="oi-telescope"
@@ -268,7 +268,7 @@ onMounted(() => {
     <div class="section anchor">
       <div class="bg-img bg-cover bg-[#171a1c]" id="grid" />
       <div class="wrapper flex flex-col gap-8">
-        <h1 class="text-8xl text-left font-extrabold">Materials and Methods</h1>
+        <h1>Materials and Methods</h1>
         <div class="grid xl:grid-cols-4 md:grid-cols-2 grid-cols-1 gap-8">
           <Card
             class="text-base"
@@ -310,7 +310,7 @@ onMounted(() => {
       />
       <div class="w-full wrapper">
         <div class="">
-          <h1 class="text-8xl text-left font-extrabold">See the tweets</h1>
+          <h1>See the tweets</h1>
         </div>
         <div class="max-w-screen-xl my-16 flex flex-row gap-8">
           <Accordion />
