@@ -39,10 +39,13 @@ a:hover {
   transition: 0.2s ease;
 }
 
+html {
+  overflow-x: hidden;
+}
+
 html,
 body {
-  width: 100%;
-  overflow-x: hidden;
+  width: 100vw;
 }
 
 body {
@@ -59,7 +62,7 @@ body {
 }
 
 .article-wrapper {
-  @apply mx-auto relative container w-screen xl:max-w-screen-lg text-left px-4;
+  @apply mx-auto relative container w-screen lg:max-w-screen-md text-left;
 }
 
 h1 {
@@ -80,7 +83,7 @@ h3 {
 p {
   font-family: 'Biryani';
   font-weight: 500;
-  @apply my-3 text-xl leading-loose text-light/60;
+  @apply my-3 text-base leading-loose text-light/60;
 }
 
 b {
@@ -123,7 +126,6 @@ code {
 
 #app {
   width: 100vw;
-  overflow-x: hidden;
   margin: 0 auto;
   text-align: center;
 }
@@ -289,4 +291,12 @@ div [lazy='loaded'] {
     top: 40%;
     transform: scale(0.8);
   }
+}
+
+section[id]::before {
+  content: '';
+  display: block;
+  height: 75px;
+  margin-top: -75px;
+  visibility: hidden;
 }

@@ -1,88 +1,101 @@
 <template>
-  <div class="article-wrapper">
-    <navbar class="relative block invisible" />
-    <h1>Data Collection</h1>
-    <h2>We mined the internet for fake news data.</h2>
-    <p>
-      After defining the goal of this project, we now move on to the next step:
-      data collection. <span class="highlighted">Data collection</span> is the
-      process of gathering relevant information that will help us answer the
-      research questions.
-    </p>
-    <p>
-      In our mission to tackle the issue of misinformation, we have developed a
-      custom Twitter scraper tool that allows us to gather tweet and user data
-      from the platform. Twitter, being a prominent social media platform,
-      serves as a rich source of information and conversations surrounding our
-      topic.
-    </p>
-    <div class="my-8">
-      <Box
-        class="text-center max-w-none bg-[#16191c]"
-        header="Keywords"
-        icon="hi-key"
-      >
-        <p>
-          We used the following keywords to search for tweets that are relevant
-          to our topic:
-        </p>
-        <p>
-          <span v-for="keyword in keywords" class="badge">
-            {{ keyword }}
-          </span>
-        </p>
-      </Box>
-    </div>
-    <h2>Data Scraper</h2>
+  <div class="wrapper">
+    <div class="flex gap-8 justify-between">
+      <div class="article-wrapper">
+        <Navbar class="relative block invisible" />
+        <h1>Data Collection</h1>
+        <section id="data-mining">
+          <h2>Fake news and where to find them</h2>
+          <p>
+            After defining the goal of this project, we now move on to the next
+            step: data collection.
+            <span class="highlighted">Data collection</span> is the process of
+            gathering relevant information that will help us answer the research
+            questions.
+          </p>
+          <p>
+            In our mission to tackle the issue of misinformation, we have
+            developed a custom Twitter scraper tool that allows us to gather
+            tweet and user data from the platform. Twitter, being a prominent
+            social media platform, serves as a rich source of information and
+            conversations surrounding our topic.
+          </p>
+          <div class="my-8">
+            <Box
+              class="text-center max-w-none bg-[#16191c]"
+              header="Keywords"
+              icon="hi-key"
+            >
+              <p>
+                We used the following keywords to search for tweets that are
+                relevant to our topic:
+              </p>
+              <p>
+                <span v-for="keyword in keywords" class="badge">
+                  {{ keyword }}
+                </span>
+              </p>
+            </Box>
+          </div>
+        </section>
+        <section id="data-scraper">
+          <h2>Data Scraper</h2>
+          <p>
+            The following Python script collected the tweets with specified
+            keywords, streamlining the data collection process and saving time.
+            Automating the collection ensures a comprehensive dataset for
+            analysis, enabling efficient capture of a large volume of essential
+            tweets for model training and investigations.
+          </p>
+          <highlight input="../codeblocks/collection.py" />
+        </section>
 
-    <p>
-      The following Python script collected the tweets with specified keywords,
-      streamlining the data collection process and saving time. Automating the
-      collection ensures a comprehensive dataset for analysis, enabling
-      efficient capture of a large volume of essential tweets for model training
-      and investigations.
-    </p>
+        <section id="criteria">
+          <h2>Criteria</h2>
+          <p>
+            In order to ensure high quality data, achieve accurate modeling, and
+            produce reliable results, the selection of tweets for our dataset is
+            guided by the following criteria:
+          </p>
+          <div class="grid grid-rows-3 gap-8">
+            <Card
+              class="max-w-none"
+              v-for="criterion in criteria"
+              :header="criterion.header"
+              :msg="criterion.content"
+              :icon="criterion.icon"
+            />
+          </div>
+          <p>The following factors were also taken into consideration:</p>
+          <div class="grid grid-cols-2 gap-8">
+            <Card
+              class="max-w-none text-center"
+              v-for="type in types"
+              :header="type.name"
+              :msg="type.description"
+              :icon="type.icon"
+            />
+          </div>
+        </section>
 
-    <highlight input="../codeblocks/collection.py" />
-
-    <h2>Criteria</h2>
-    <p>
-      In order to ensure high quality data, achieve accurate modeling, and
-      produce reliable results, the selection of tweets for our dataset is
-      guided by the following criteria:
-    </p>
-    <div class="grid grid-rows-3 gap-8">
-      <Card
-        class="max-w-none"
-        v-for="criterion in criteria"
-        :header="criterion.header"
-        :msg="criterion.content"
-        :icon="criterion.icon"
-      />
-    </div>
-    <p>The following factors were also taken into consideration:</p>
-    <div class="grid grid-cols-2 gap-8">
-      <Card
-        class="max-w-none text-center"
-        v-for="type in types"
-        :header="type.name"
-        :msg="type.description"
-        :icon="type.icon"
-      />
-    </div>
-
-    <router-link to="/exploration" class="flex items-center gap-4 mt-8 group">
-      <p>
-        <span class="highlighted group-hover:text-primary"
-          >Next chapter: Exploring the Data</span
+        <router-link
+          to="/exploration"
+          class="flex items-center gap-4 mt-8 group"
         >
-      </p>
+          <p>
+            <span class="highlighted group-hover:text-primary"
+              >Next chapter: Exploring the Data</span
+            >
+          </p>
 
-      <v-icon
-        name="hi-arrow-right"
-        class="transform transition-all group-hover:translate-x-3"
-      />
-    </router-link>
+          <v-icon
+            name="hi-arrow-right"
+            class="transform transition-all group-hover:translate-x-3"
+          />
+        </router-link>
+      </div>
+      <StickySpy />
+    </div>
   </div>
 </template>
 
@@ -91,6 +104,7 @@ import Navbar from '@/components/Navbar.vue';
 import Box from '@/components/Box.vue';
 import Card from '@/components/Card.vue';
 import Highlight from '@/components/Highlight.vue';
+import StickySpy from '@/components/StickySpy.vue';
 
 const keywords = [
   'bayaran npa rally',

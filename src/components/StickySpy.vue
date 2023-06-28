@@ -1,5 +1,5 @@
 <template>
-  <nav class="section-nav h-fit">
+  <nav class="section-nav h-fit w-full max-w-sm xl:block hidden">
     <ol class="bullet-list">
       <li v-for="link in links">
         <a :href="link.target">{{ link.name }}</a>
@@ -12,14 +12,16 @@
 import { onMounted, onUnmounted, ref } from 'vue';
 
 const observer = ref(null);
-const root = ref(null);
 const links = ref([]);
+const root = ref(null);
 
 onMounted(() => {
   observer.value = new IntersectionObserver(onElementObserved, {
-    threshold: 0.5,
-    rootMargin: '-60px 0px',
+    threshold: 0,
+    rootMargin: '-50% 0px -50% 0px',
   });
+
+  root.value = document.querySelector('.article-wrapper');
 
   root.value.querySelectorAll('section[id]').forEach((section) => {
     observer.value.observe(section);
@@ -41,14 +43,13 @@ onUnmounted(() => {
 function onElementObserved(entries) {
   entries.forEach(({ target, isIntersecting }) => {
     const id = target.getAttribute('id');
-    // make it so only one element can be active at a time even if multiple are intersecting
     if (isIntersecting) {
-      root.value
-        .querySelector(`nav li a[href="#${id}"]`)
+      document
+        .querySelector(`nav ol li a[href="#${id}"]`)
         .parentElement.classList.add('active');
     } else {
-      root.value
-        .querySelector(`nav li a[href="#${id}"]`)
+      document
+        .querySelector(`nav ol li a[href="#${id}"]`)
         .parentElement.classList.remove('active');
     }
   });
@@ -57,28 +58,20 @@ function onElementObserved(entries) {
 
 <style scoped>
 /* Sidebar Navigation */
-
-[id]::before {
-  content: '';
-  display: block;
-  height: 75px;
-  margin-top: -75px;
-  visibility: hidden;
-}
 .section-nav {
   position: sticky;
   top: 150px;
   right: 0;
   margin-top: 2rem;
   padding-left: 0;
-  border-left: 1px solid #efefef;
+  @apply border-l border-light/10;
 }
 
 .section-nav a {
   text-decoration: none;
   display: block;
   padding: 0.125rem 0;
-  color: black;
+  color: #ccc;
   transition: all 50ms ease-in-out;
 }
 
@@ -88,8 +81,7 @@ function onElementObserved(entries) {
 }
 
 .section-nav li.active > a {
-  color: #f2765d;
-  font-weight: 500;
+  @apply text-primary font-extrabold;
 }
 
 /* Sticky Navigation */
